@@ -8,6 +8,12 @@ public class CardPile : MonoBehaviour
 {
     List<AbstractCard> cards;
 
+    public static CardPile GetInitialRandCardPile()
+    {
+        
+        return null;
+    }
+
     public void ShuffleCards()//给牌堆洗牌
     {
         System.Random random = new System.Random();

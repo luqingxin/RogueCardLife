@@ -29,7 +29,7 @@ public abstract class AbstractCard : MonoBehaviour
             foreach (int x in CardA.pointNums)
             {
                 foreach (int y in CardB.pointNums)
-                {
+                { 
                     if (x == y) return true;
                 }
             }

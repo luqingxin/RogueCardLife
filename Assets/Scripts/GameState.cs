@@ -46,7 +46,7 @@ public class GameState : MonoBehaviour
     public void DiscardAndDrawCard(AbstractCard x)//弃牌
     {
         remainedEnegy -= discardAndDrawCost;//能量减少
-        AbstractCard y = drawPile.DrawCard();
+        AbstractCard y = drawPile.DrawCard();//抽取新牌y
         foreach (CardPair p in cardPairs)
         {
             if (p.cardA == x)

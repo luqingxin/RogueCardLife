@@ -13,6 +13,18 @@ public class PlayerCharacter : MonoBehaviour
     public int faith;//信义
     public int ambition;//志气
 
+    public CardPile playerCardPile;
+
+    //初始化玩家人物
+    public void PlayerCharacterInitialize()
+    {
+        age = 0;
+        strength = 1;
+        strategy = 1;
+        charm = 1;
+        faith = 1;
+        ambition = 1;
+    }
 
     // Start is called before the first frame update
     void Start()
