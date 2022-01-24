@@ -21,6 +21,7 @@ public abstract class AbstractCard : MonoBehaviour
     CardType cardType;//类型
     AbstractNonPlayerCharacter cardSource;//卡牌来自哪个NPC
     List<int> pointNums;//点数
+    public string cardNum;//编号
 
     public static bool CardCombine(AbstractCard CardA,AbstractCard CardB)//判断卡牌能否组合
     {
@@ -50,25 +51,29 @@ public abstract class AbstractCard : MonoBehaviour
         {
             if (CardA.cardType == CardType.NORMAL || CardB.cardType == CardType.NORMAL)//都为任务牌不能结合，一张普通一张任务牌则要求属性都一样才能结合
             {
+                bool numberMatching = false;
+                bool colorMatching = false;
+                //1.24盘修改，在所有内容中存在相同的点数和颜色即可
                 foreach (int x in CardA.pointNums)
                 {
                     foreach (int y in CardB.pointNums)
                     {
-                        if (x != y) return false;
+                        if (x == y) numberMatching = true;
                     }
                 }
                 foreach (CardColor x in CardA.cardColors)
                 {
                     foreach (CardColor y in CardB.cardColors)
                     {
-                        if (x != y) return false;
+                        if (x == y) colorMatching = true ;
                     }
                 }
                 if (CardA.cardSource != CardB.cardSource)
                 {
                     return false;
                 }
-                return true;
+                if(numberMatching&&colorMatching)
+                    return true;
             }
             return false;
         }
