@@ -22,7 +22,12 @@ public abstract class AbstractCard : MonoBehaviour
     AbstractNonPlayerCharacter cardSource;//卡牌来自哪个NPC
     List<int> pointNums;//点数
     public string cardNum;//编号
+    public AbstractGameRun gameRun;
 
+    public void addAction()
+    {
+        
+    }
     public static bool CardCombine(AbstractCard CardA,AbstractCard CardB)//判断卡牌能否组合
     {
         if (CardA.cardType == CardType.NORMAL && CardB.cardType == CardType.NORMAL)//同时为普通牌，只要有一个属性一样就可以结合

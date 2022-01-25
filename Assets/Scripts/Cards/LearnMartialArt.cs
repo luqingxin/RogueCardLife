@@ -2,15 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * 一局游戏的抽象类，包含一局游戏的各种对象信息
- */
-
-public class AbstractGameRun : MonoBehaviour
+//卡牌习武，效果武力+3
+public class LearnMartialArt : AbstractCard
 {
-    public GameActionManager gameActionManager;
-    public GameState gameState;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +15,10 @@ public class AbstractGameRun : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public override void Effect()
+    {
+
     }
 }

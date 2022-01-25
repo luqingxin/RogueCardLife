@@ -4,14 +4,8 @@ using UnityEngine;
 /*
  * 玩家角色类
  */
-public class PlayerCharacter : MonoBehaviour
+public abstract class PlayerCharacter : AbstractCharacter
 {
-    public int age;
-    public int strength;//武力值
-    public int strategy;//谋略
-    public int charm;//魅力
-    public int faith;//信义
-    public int ambition;//志气
 
     public CardPile playerCardPile;
 

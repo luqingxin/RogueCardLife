@@ -5,8 +5,33 @@ using UnityEngine;
 /*
  * 游戏动作的抽象类，一张卡的效果由数个动作组成
  */
-public class AbstractGameAction : MonoBehaviour
+
+//动作的类型
+public enum ActionType
 {
+    BUFF , DEFUFF
+}
+
+
+public abstract class AbstractGameAction : MonoBehaviour
+{
+    public AbstractCharacter source;//动作的来源
+    public AbstractCharacter target;//动作的目标
+    public AbstractGameRun gameRun;//当前游戏
+    public int magicNum;//该动作的数值大小
+
+    public void addTop(AbstractGameAction action)
+    {
+        gameRun.gameActionManager.addActionToTop(action);
+    }
+
+    public void addBottom(AbstractGameAction action)
+    {
+        gameRun.gameActionManager.addActionToBottom(action);
+    }
+
+    public abstract void Effet();
+
     // Start is called before the first frame update
     void Start()
     {

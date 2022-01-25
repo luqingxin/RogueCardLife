@@ -6,7 +6,7 @@ using UnityEngine;
  * 所有npc的抽象类
  */
 
-public abstract class AbstractNonPlayerCharacter
+public abstract class AbstractNonPlayerCharacter : AbstractCharacter
 {
 
 }
