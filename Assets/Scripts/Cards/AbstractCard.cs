@@ -21,7 +21,8 @@ public abstract class AbstractCard : MonoBehaviour
     CardType cardType;//类型
     AbstractNonPlayerCharacter cardSource;//卡牌来自哪个NPC
     List<int> pointNums;//点数
-    public string cardNum;//编号
+    public int cardNum;//卡牌的总编号
+    public string cardName;//卡牌名称
     public AbstractGameRun gameRun;
 
     public void addAction()
