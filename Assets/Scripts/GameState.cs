@@ -24,19 +24,19 @@ public class GameState : MonoBehaviour
                 //还没写的，移动y到牌对p的A位置
                 p.cardA = y;
             }
+            else if (p.cardA == y)
+            {
+                //还没写的，移动x到牌对p的A位置
+                p.cardA = x;
+            }
             if (p.cardB == x)
             {
                 //还没写的，移动y到牌对p的B位置
                 p.cardB = y;
             }
-            if (p.cardA == y)
+            else if (p.cardB == y)
             {
-                //还没写的，移动x到牌对p的A位置
-                p.cardA = x;
-            }
-            if (p.cardB == y)
-            {
-                //还没写的，移动x到牌对p的A位置
+                //还没写的，移动x到牌对p的B位置
                 p.cardB = x;
             }
             p.CheckLock();
