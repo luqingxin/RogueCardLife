@@ -32,19 +32,24 @@ public class CardSelect : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(mousePositionInWorld, Vector2.zero);
 
-            if(hit.collider != null)
+            if(hit.collider != null && !isShowcased)
             {
                 selectedGameObj = hit.collider.gameObject;
-            }
-            isShowcased =!isShowcased;
-            //卡牌展示界面
-            showcase.SetActive(!showcase.active);
-            string selectedCardName;
-            //selectedCardNum = selectedGameObj.GetComponent<AbstractCard>().cardNum;//获取卡牌序号
-            selectedCardName = selectedGameObj.name;
+                isShowcased = true;
+                //卡牌展示界面
+                showcase.SetActive(true);
+                string selectedCardName;
+                //selectedCardNum = selectedGameObj.GetComponent<AbstractCard>().cardNum;//获取卡牌序号
+                selectedCardName = selectedGameObj.name;
 
-            Sprite _cardPic = Resources.Load<Sprite>(selectedCardName);
-            showcase.GetComponent<SpriteRenderer>().sprite = _cardPic;
+                Sprite _cardPic = Resources.Load<Sprite>(selectedCardName);
+                showcase.GetComponent<SpriteRenderer>().sprite = _cardPic;
+            }
+            else if(isShowcased)
+            {
+                isShowcased = false;
+                showcase.SetActive(false);
+            }
         }
 
         //判断是否进入卡牌展示界面
