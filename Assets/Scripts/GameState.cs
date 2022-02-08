@@ -63,9 +63,9 @@ public class GameState : MonoBehaviour
         {
             p.cardA.Effect();//触发卡牌AB的效果
             p.cardB.Effect();
-            DiscardCard(p.cardA);
+            DiscardCard(p.cardA);//弃掉这两张
             DiscardCard(p.cardB);
-            DrawCard();
+            DrawCard();//再抽两张
             DrawCard();
             return true;
         }
