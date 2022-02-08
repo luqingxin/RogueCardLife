@@ -14,6 +14,11 @@ public class GameState : MonoBehaviour
     const int swapCost = 1;
     const int discardAndDrawCost = 2;
 
+    public void EndRound()
+    {
+
+    }
+
     public void RestartRound()
     {
         remainedEnegy = maxEnegy;
