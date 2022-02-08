@@ -28,7 +28,7 @@ public abstract class AbstractGameAction : MonoBehaviour
         magicNum = n;
     }
 
-    public abstract void Effet();
+    public abstract void Effect();
 
     // Start is called before the first frame update
     void Start()
