@@ -20,6 +20,8 @@ public abstract class AbstractGameAction : MonoBehaviour
     public AbstractGameRun gameRun;//当前游戏
     public int magicNum;//该动作的数值大小
 
+    public AbstractGameAction() { }
+
     public AbstractGameAction(AbstractCharacter s,AbstractCharacter t,AbstractGameRun g,int n)//游戏动作由来源，目标，当前游戏，数值构建
     {
         source = s;

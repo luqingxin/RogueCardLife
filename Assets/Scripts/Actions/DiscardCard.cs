@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * 弃牌的动作
+ */
 public class DiscardCard : AbstractGameAction
 {
-    public DiscardCard(AbstractCharacter s, AbstractCharacter t, AbstractGameRun g, int n) : base(s, t, g, n) { }
+
+    public DiscardCard(AbstractCard x)//指定弃牌
+    {
+        gameRun.gameState.DiscardCard(x);
+    }
 
     public override void Effect()
     {
-        
+
     }
     // Start is called before the first frame update
     void Start()
