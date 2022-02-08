@@ -19,6 +19,6 @@ public class LearnMartialArt : AbstractCard
 
     public override void Effect()
     {
-
+        addActionToButtom(new GainStrengthAction(gameRun.playerCharacter,gameRun.playerCharacter,gameRun,magicNumber1));//获得力量
     }
 }

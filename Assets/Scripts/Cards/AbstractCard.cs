@@ -18,25 +18,34 @@ public enum CardType
 public abstract class AbstractCard : MonoBehaviour
 {
     List<CardColor> cardColors;//颜色集合
-    CardType cardType;//类型
+    public CardType cardType;//类型
     AbstractNonPlayerCharacter cardSource;//卡牌来自哪个NPC
     List<int> pointNums;//点数
     public int cardNum;//卡牌的总编号
     public string cardName;//卡牌名称
     public AbstractGameRun gameRun;
+    public int magicNumber1,magicNumber2;//卡牌的数值大小
 
-    public void addAction()
+    public void addActionToTop(AbstractGameAction action)
     {
-        
+        gameRun.gameActionManager.addActionToTop(action);
+    }
+    public void addActionToButtom(AbstractGameAction action)
+    {
+        gameRun.gameActionManager.addActionToBottom(action);
     }
     public static bool CardCombine(AbstractCard CardA,AbstractCard CardB)//判断卡牌能否组合
     {
+        if(CardA == null || CardB == null)
+        {
+            return false;
+        }
         if (CardA.cardType == CardType.NORMAL && CardB.cardType == CardType.NORMAL)//同时为普通牌，只要有一个属性一样就可以结合
         {
             foreach (int x in CardA.pointNums)
             {
                 foreach (int y in CardB.pointNums)
-                { 
+                {
                     if (x == y) return true;
                 }
             }
@@ -45,6 +54,8 @@ public abstract class AbstractCard : MonoBehaviour
                 foreach (CardColor y in CardB.cardColors)
                 {
                     if (x == y) return true;
+                    if (x == CardColor.WHITE) return true;//白色能匹配所有
+                    if (y == CardColor.WHITE) return true;
                 }
             }
             if (CardA.cardSource == CardB.cardSource)
@@ -72,6 +83,8 @@ public abstract class AbstractCard : MonoBehaviour
                     foreach (CardColor y in CardB.cardColors)
                     {
                         if (x == y) colorMatching = true ;
+                        if (x == CardColor.WHITE) colorMatching = true;
+                        if (y == CardColor.WHITE) colorMatching = true;
                     }
                 }
                 if (CardA.cardSource != CardB.cardSource)

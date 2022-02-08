@@ -6,6 +6,8 @@ using UnityEngine;
  */
 public class GainStrengthAction : AbstractGameAction
 {
+
+    public GainStrengthAction(AbstractCharacter s, AbstractCharacter t, AbstractGameRun g, int n) : base(s, t, g, n) { }
     public override void Effet()
     {
         target.GainStrength(magicNum);

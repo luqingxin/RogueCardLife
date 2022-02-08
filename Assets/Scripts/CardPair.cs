@@ -8,8 +8,12 @@ public class CardPair
 {
     public AbstractCard cardA, cardB;
     public bool isLocked;
-    // Start is called before the first frame update
 
+    public bool CheckPair()//判断是否为结算对
+    {
+        return AbstractCard.CardCombine(cardA, cardB);
+    }
+    [System.Obsolete("use CheckPair")]
     public void CheckLock()
     {
         if (AbstractCard.CardCombine(cardA, cardB))
@@ -18,6 +22,7 @@ public class CardPair
         }
     }
 
+    // Start is called before the first frame update
     void Start()
     {
         

@@ -20,14 +20,12 @@ public abstract class AbstractGameAction : MonoBehaviour
     public AbstractGameRun gameRun;//当前游戏
     public int magicNum;//该动作的数值大小
 
-    public void addTop(AbstractGameAction action)
+    public AbstractGameAction(AbstractCharacter s,AbstractCharacter t,AbstractGameRun g,int n)//游戏动作由来源，目标，当前游戏，数值构建
     {
-        gameRun.gameActionManager.addActionToTop(action);
-    }
-
-    public void addBottom(AbstractGameAction action)
-    {
-        gameRun.gameActionManager.addActionToBottom(action);
+        source = s;
+        target = t;
+        gameRun = g;
+        magicNum = n;
     }
 
     public abstract void Effet();
