@@ -6,15 +6,15 @@ using UnityEngine;
  */
 public class DiscardCard : AbstractGameAction
 {
-
+    AbstractCard card;
     public DiscardCard(AbstractCard x)//指定弃牌
     {
-        gameRun.gameState.DiscardCard(x);
+        card = x;
     }
 
     public override void Effect()
     {
-
+        gameRun.gameState.DiscardCard(card);
     }
     // Start is called before the first frame update
     void Start()
