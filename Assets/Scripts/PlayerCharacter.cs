@@ -14,13 +14,9 @@ public abstract class PlayerCharacter : AbstractCharacter
     {
         age = 0;
         strength = 1;
+        move = 1;
         wisdom = 1;
-        communication = 1;
-        charm = 1;
-        faith = 1;
-        courage = 1;
-        ambition = 1;
-        
+        communication = 1;        
     }
 
     // Start is called before the first frame update
