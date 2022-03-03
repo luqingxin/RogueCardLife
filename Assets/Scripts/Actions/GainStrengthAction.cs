@@ -22,6 +22,6 @@ public class GainStrengthAction : AbstractGameAction
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
