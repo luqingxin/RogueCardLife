@@ -6,28 +6,30 @@ using UnityEngine;
  */
 public abstract class AbstractCharacter : MonoBehaviour
 {
-
     public int age;
-    public int strength;//武力值
-    public int strategy;//谋略
-    public int charm;//魅力
-    public int faith;//信义
-    public int ambition;//志气
+    public int strength;//内功
+    public int move;//招式
+    public int wisdom;//智谋
+    public int communication;//交际
+    public List<int> titleList;//角色的标签
 
-    public void GainStrength(int x)// 获取x点武力
+    public void GainStrength(int x)// 获取x点内功
     {
-        this.strength += x;
+        strength += x;
+    }
+    
+    public void GainMove(int x)//获取x点招式
+    {
+        move += x;
+    }
+    public void GainWisdom(int x)//获取x点智谋
+    {
+        wisdom += x;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void GainCommunication(int x)//获取x点交际
     {
-        
+        communication += x;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

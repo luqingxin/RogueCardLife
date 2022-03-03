@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class CardSelect : MonoBehaviour
 {
+    private float cardSpeed;
     public static GameObject selectedGameObj;//被点击的物体
     public static GameObject nullGameObj;//为避免报错设定的物体
     public static bool isShowcased;//是否进入卡牌详情界面
     public static bool isSelected;
-    Vector2 mousePositionOnScreen;
-    public static Vector2 mousePositionInWorld;
-    Vector2 formalPos;
+    Vector3 mousePositionOnScreen;
+    public static Vector3 mousePositionInWorld;
+    Vector3 formalPos;
     public static List<AbstractCard> cards;//当前卡牌的序列
 
     public GameObject showcase;
 
     private void Start()
     {
+        cardSpeed = 2.8f * Time.deltaTime;
         selectedGameObj = new GameObject();
         nullGameObj = selectedGameObj;
         isShowcased = false;
@@ -84,16 +86,27 @@ public class CardSelect : MonoBehaviour
                 if (selectedGameObj.layer == 8)
                 {
                     isSelected = false;
-                    selectedGameObj.transform.position = formalPos;
-                    selectedGameObj = nullGameObj;
+                    //selectedGameObj.transform.position = formalPos;
+                    //selectedGameObj = nullGameObj;
                 }
             }
         }
 
-        //跟随效果
+        //跟随效果、归位效果
         if(isSelected)
         {
-            selectedGameObj.transform.position = mousePositionInWorld;
+            selectedGameObj.transform.position = new Vector3(Mathf.Lerp(selectedGameObj.transform.position.x, mousePositionInWorld.x, cardSpeed), Mathf.Lerp(selectedGameObj.transform.position.y, mousePositionInWorld.y, cardSpeed), 0);
+        }
+        else
+        {
+            if(selectedGameObj.transform.position == formalPos)
+            {
+                selectedGameObj = nullGameObj;
+            }
+            else
+            {
+                selectedGameObj.transform.position = new Vector3(Mathf.Lerp(selectedGameObj.transform.position.x, formalPos.x, cardSpeed), Mathf.Lerp(selectedGameObj.transform.position.y, formalPos.y, cardSpeed), 0);
+            }
         }
     }
 
