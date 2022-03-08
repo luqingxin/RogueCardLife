@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 /*
- * 弃牌的动作
+ * 坚韧
  */
-public class DiscardCard : AbstractGameAction
+public class Tenacity : AbstractCard
 {
-    AbstractCard card;
-    public DiscardCard(AbstractCard x)//指定弃牌
-    {
-        card = x;
-    }
+
 
     public override void Effect()
     {
-        gameRun.gameState.DiscardCard(card);
+        throw new System.NotImplementedException();
     }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.pointNums = new List<int>();
+        this.cardColors = new List<CardColor>();
+        this.pointNums.Add(0);
+        this.cardColors.Add(CardColor.WHITE);
     }
 
     // Update is called once per frame

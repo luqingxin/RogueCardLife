@@ -17,14 +17,16 @@ public enum CardType
 
 public abstract class AbstractCard : MonoBehaviour
 {
-    List<CardColor> cardColors;//颜色集合
+    public List<CardColor> cardColors;//颜色集合
     public CardType cardType;//类型
-    AbstractNonPlayerCharacter cardSource;//卡牌来自哪个NPC
-    List<int> pointNums;//点数
+    public AbstractNonPlayerCharacter cardSource;//卡牌来自哪个NPC
+    public List<int> pointNums;//点数
     public int cardNum;//卡牌的总编号
     public string cardName;//卡牌名称
     public AbstractGameRun gameRun;
     public int magicNumber1,magicNumber2;//卡牌的数值大小
+    public int NumInPlayerCardPile;//卡牌在玩家牌堆中的编号
+    public bool isExhaust;//卡牌使用后是否消耗
 
     public void addActionToTop(AbstractGameAction action)
     {

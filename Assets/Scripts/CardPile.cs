@@ -6,7 +6,7 @@ using UnityEngine;
  */
 public class CardPile : MonoBehaviour
 {
-    List<AbstractCard> cards;
+    public List<AbstractCard> cards;
 
     public static CardPile GetInitialRandCardPile()
     {

@@ -12,6 +12,7 @@ public abstract class AbstractCharacter : MonoBehaviour
     public int wisdom;//智谋
     public int communication;//交际
     public List<int> titleList;//角色的标签
+    public AbstractGameRun gameRun;
 
     public void GainStrength(int x)// 获取x点内功
     {

@@ -6,13 +6,12 @@ using UnityEngine;
  */
 public class GameState : MonoBehaviour
 {
-    int maxEnegy;//每回合开始的能量
-    int remainedEnegy;//当前剩余能量
     CardPile drawPile;//抽牌堆
     CardPile discardPile;//弃牌堆
     List<CardPair> cardPairs;//N对牌
     const int swapCost = 1;
     const int discardAndDrawCost = 2;
+    AbstractGameRun gameRun;
 
     public void EndRound()
     {
@@ -21,7 +20,7 @@ public class GameState : MonoBehaviour
 
     public void RestartRound()
     {
-        remainedEnegy = maxEnegy;
+        
     }
 
     public bool DiscardCard(AbstractCard x)//弃一张牌
@@ -62,16 +61,52 @@ public class GameState : MonoBehaviour
         return false;
     }
 
+    public bool Exhaust(AbstractCard x)
+    {
+        foreach (CardPair p in cardPairs)
+        {
+            if (p.cardA == x)
+            {
+                p.cardA = null;
+            }
+            if (p.cardB == x)
+            {
+                p.cardB = null;
+            }
+            return true;
+        }
+        return false;
+    }
+
     public bool CheckPairAndEffect(CardPair p)//判断结算对和结算
     {
         if (p.CheckPair())
         {
             p.cardA.Effect();//触发卡牌AB的效果
             p.cardB.Effect();
-            DiscardCard(p.cardA);//弃掉这两张
+            //弃掉或消耗这两张
+            if (p.cardA.isExhaust) 
+            { 
+                addActionToButtom(new ExhaustCardAction(p.cardA, gameRun)); 
+            }
+            else
+            {
+                addActionToButtom(new DiscardCardAction(p.cardA, gameRun));
+            }
+            if (p.cardB.isExhaust)
+            {
+                addActionToButtom(new ExhaustCardAction(p.cardB, gameRun));
+            }
+            else
+            {
+                addActionToButtom(new DiscardCardAction(p.cardB, gameRun));
+            }
+            addActionToButtom(new DrawCardAction(gameRun));
+            addActionToButtom(new DrawCardAction(gameRun));//再抽两张
+            /*DiscardCard(p.cardA);//弃掉这两张
             DiscardCard(p.cardB);
             DrawCard();//再抽两张
-            DrawCard();
+            DrawCard();*/
             return true;
         }
         return false;
@@ -83,11 +118,11 @@ public class GameState : MonoBehaviour
         {
             return false;
         }
-        if (remainedEnegy < swapCost)
+        if (gameRun.playerCharacter.energy < swapCost)
         {
             return false;
         }
-        remainedEnegy -= swapCost;//能量减少
+        gameRun.playerCharacter.energy -= swapCost;//精力减少
         foreach (CardPair p in cardPairs)
         {
             if(p.cardA == x)
@@ -117,7 +152,7 @@ public class GameState : MonoBehaviour
 
     public bool DiscardAndDrawCard(AbstractCard x)//弃牌抽牌
     {
-        if (remainedEnegy < discardAndDrawCost)
+        if (gameRun.playerCharacter.energy < discardAndDrawCost)
         {
             return false;
         }
@@ -126,9 +161,19 @@ public class GameState : MonoBehaviour
             return false;
         }
         DrawCard();
-        remainedEnegy -= discardAndDrawCost;//能量减少
+        gameRun.playerCharacter.energy -= discardAndDrawCost;//精力减少
         return true;
     }
+
+    public void addActionToTop(AbstractGameAction action)
+    {
+        gameRun.gameActionManager.addActionToTop(action);
+    }
+    public void addActionToButtom(AbstractGameAction action)
+    {
+        gameRun.gameActionManager.addActionToBottom(action);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

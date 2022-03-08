@@ -8,6 +8,8 @@ public abstract class PlayerCharacter : AbstractCharacter
 {
 
     public CardPile playerCardPile;
+    public int energy;//精力
+    public int endurance;//耐力值
 
     //初始化玩家人物
     public void PlayerCharacterInitialize()
