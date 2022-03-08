@@ -7,7 +7,6 @@ using UnityEngine;
 public class LongFist : AbstractCard
 {
 
-
     public override void Effect()
     {
         
