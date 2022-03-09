@@ -1,24 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class CardFrame : MonoBehaviour
 {
-    public GameObject frame;
+    public GameObject lightFrame;
+    public GameObject pic;
     private void OnMouseEnter()
     {
         if(CardSelect.isSelected == false && CardSelect.isShowcased == false)
-            frame.SetActive(true);
+            lightFrame.SetActive(true);
     }
     private void OnMouseExit()
     {
         if (CardSelect.isSelected == false && CardSelect.isShowcased == false)
-            frame.SetActive(false);
+            lightFrame.SetActive(false);
     }
     private void Update()
     {
         if (CardSelect.isShowcased)
-            frame.SetActive(false);
+            lightFrame.SetActive(false);
+    }
+    public void loadCardPic(Sprite cardPic)
+    {
+        pic.GetComponent<Image>().sprite = cardPic;
     }
 }
