@@ -38,6 +38,13 @@ public class GameActionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(actionState == ActionState.WAITING)
+        {
+
+        }
+        else if(actionState == ActionState.EXECUTING)
+        {
+
+        }
     }
 }

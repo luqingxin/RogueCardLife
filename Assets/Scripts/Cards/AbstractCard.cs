@@ -27,7 +27,7 @@ public abstract class AbstractCard : MonoBehaviour
     public int magicNumber1,magicNumber2;//卡牌的数值大小
     public int NumInPlayerCardPile;//卡牌在玩家牌堆中的编号
     public bool isExhaust;//卡牌使用后是否消耗
-    public string cardDescription{ get; }//卡牌的描述
+    public string cardDescription;//卡牌的描述
 
     public void addActionToTop(AbstractGameAction action)
     {
