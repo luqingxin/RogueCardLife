@@ -11,16 +11,22 @@ public class CardSelect : MonoBehaviour
     public static bool isSelected;
     Vector3 mousePositionOnScreen;
     public static Vector3 mousePositionInWorld;
-    Vector3 formalPos;
+    public static Vector3 formalPos;
     public static List<AbstractCard> cards;//当前卡牌的序列
 
     public GameObject showcase;
+    private GameObject showcase_pic;
+    private GameObject showcase_frame;
 
     private void Start()
     {
         cardSpeed = 2.8f * Time.deltaTime;
+
         selectedGameObj = new GameObject();
         nullGameObj = selectedGameObj;
+        showcase_pic = showcase.transform.GetChild(0).gameObject;
+        showcase_frame = showcase.transform.GetChild(2).gameObject;
+
         isShowcased = false;
         isSelected = false;
     }
@@ -37,15 +43,18 @@ public class CardSelect : MonoBehaviour
             if(hit.collider != null && !isShowcased)
             {
                 selectedGameObj = hit.collider.gameObject;
+                formalPos = hit.collider.transform.position;
                 isShowcased = true;
                 //卡牌展示界面
                 showcase.SetActive(true);
+                //showcase_pic.SetActive(true);
                 string selectedCardName;
                 //selectedCardNum = selectedGameObj.GetComponent<AbstractCard>().cardNum;//获取卡牌序号
                 selectedCardName = selectedGameObj.name;
 
                 Sprite _cardPic = Resources.Load<Sprite>(selectedCardName);
-                showcase.GetComponent<SpriteRenderer>().sprite = _cardPic;
+                showcase_frame.GetComponent<SpriteRenderer>().sprite = _cardPic;
+
             }
             else if(isShowcased)
             {
@@ -90,22 +99,21 @@ public class CardSelect : MonoBehaviour
                     //selectedGameObj = nullGameObj;
                 }
             }
-        }
-
-        //跟随效果、归位效果
-        if(isSelected)
-        {
-            selectedGameObj.transform.position = new Vector3(Mathf.Lerp(selectedGameObj.transform.position.x, mousePositionInWorld.x, cardSpeed), Mathf.Lerp(selectedGameObj.transform.position.y, mousePositionInWorld.y, cardSpeed), 0);
-        }
-        else
-        {
-            if(selectedGameObj.transform.position == formalPos)
+            //跟随效果、归位效果
+            if (isSelected)
             {
-                selectedGameObj = nullGameObj;
+                selectedGameObj.transform.position = new Vector3(Mathf.Lerp(selectedGameObj.transform.position.x, mousePositionInWorld.x, cardSpeed), Mathf.Lerp(selectedGameObj.transform.position.y, mousePositionInWorld.y, cardSpeed), 0);
             }
             else
             {
-                selectedGameObj.transform.position = new Vector3(Mathf.Lerp(selectedGameObj.transform.position.x, formalPos.x, cardSpeed), Mathf.Lerp(selectedGameObj.transform.position.y, formalPos.y, cardSpeed), 0);
+                if (selectedGameObj.transform.position == formalPos)
+                {
+                    selectedGameObj = nullGameObj;
+                }
+                else
+                {
+                    selectedGameObj.transform.position = new Vector3(Mathf.Lerp(selectedGameObj.transform.position.x, formalPos.x, 1.5f * cardSpeed), Mathf.Lerp(selectedGameObj.transform.position.y, formalPos.y, cardSpeed), 0);
+                }
             }
         }
     }
