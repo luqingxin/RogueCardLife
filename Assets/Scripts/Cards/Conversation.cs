@@ -20,6 +20,7 @@ public class Conversation : AbstractCard
         this.cardColors = new List<CardColor>();
         this.pointNums.Add(1);
         this.cardColors.Add(CardColor.GREEN);
+        this.cardDescription = "交谈";
     }
 
     // Update is called once per frame

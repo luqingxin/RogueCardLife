@@ -21,6 +21,7 @@ public class SilkBag : AbstractCard
         this.pointNums.Add(5);
         this.cardColors.Add(CardColor.BLUE);
         this.isExhaust = true;
+        this.cardDescription = "锦囊";
     }
 
     // Update is called once per frame

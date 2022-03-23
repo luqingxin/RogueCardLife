@@ -20,6 +20,7 @@ public class HandwrittenLetter : AbstractCard
         this.pointNums.Add(5);
         this.cardColors.Add(CardColor.GREEN);
         this.isExhaust = true;
+        this.cardDescription = "亲笔信";
     }
 
     // Update is called once per frame

@@ -9,9 +9,15 @@ public class CardIndex : MonoBehaviour
 {
     List<Type> cardTypes;
 
+    public Type getCardAt(int x)
+    {
+        return cardTypes[x];
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        //将卡牌的类加入索引
         cardTypes.Add(typeof(AdjustBreathing));
         cardTypes.Add(typeof(Conversation));
         cardTypes.Add(typeof(DefuseSkill));

@@ -18,6 +18,7 @@ public class GreatPill : AbstractCard
         this.pointNums.Add(5);
         this.cardColors.Add(CardColor.RED);
         this.isExhaust = true;
+        this.cardDescription = "大还丹";
     }
 
     // Update is called once per frame

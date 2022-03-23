@@ -16,6 +16,8 @@ public class GameActionManager : MonoBehaviour
 {
     List<AbstractGameAction> actions;//当前动作队列
     ActionState actionState;//当前是否有动作执行
+    AbstractGameAction currentAction;//当前执行的队列
+    
 
 
     public void addActionToBottom(AbstractGameAction action)
@@ -40,11 +42,24 @@ public class GameActionManager : MonoBehaviour
     {
         if(actionState == ActionState.WAITING)
         {
-
+            if(actions.Count != 0)
+            {
+                currentAction = actions[0];
+                actions.RemoveAt(0);
+                actionState = ActionState.EXECUTING;
+                currentAction.Effect();
+            }
         }
         else if(actionState == ActionState.EXECUTING)
         {
+            if (currentAction.isDone == true)
+            {
 
+            }
+            else
+            {
+
+            }
         }
     }
 }

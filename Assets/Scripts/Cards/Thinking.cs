@@ -19,6 +19,7 @@ public class Thinking : AbstractCard
         this.cardColors = new List<CardColor>();
         this.pointNums.Add(2);
         this.cardColors.Add(CardColor.BLUE);
+        this.cardDescription = "思考";
     }
 
     // Update is called once per frame

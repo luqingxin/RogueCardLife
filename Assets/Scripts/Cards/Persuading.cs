@@ -19,6 +19,7 @@ public class Persuading : AbstractCard
         this.cardColors = new List<CardColor>();
         this.pointNums.Add(2);
         this.cardColors.Add(CardColor.GREEN);
+        this.cardDescription = "说服";
     }
 
     // Update is called once per frame

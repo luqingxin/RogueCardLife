@@ -21,6 +21,7 @@ public class FineSword : AbstractCard
         this.pointNums.Add(5);
         this.cardColors.Add(CardColor.YELLOW);
         this.isExhaust = true;
+        this.cardDescription = "宝剑";
     }
 
     // Update is called once per frame

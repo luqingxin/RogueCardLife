@@ -20,6 +20,7 @@ public class StoragePower : AbstractCard
         this.cardColors = new List<CardColor>();
         this.pointNums.Add(2);
         this.cardColors.Add(CardColor.RED);
+        this.cardDescription = "蓄力";
     }
 
     // Update is called once per frame

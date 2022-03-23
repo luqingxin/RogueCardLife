@@ -20,6 +20,7 @@ public class Observe : AbstractCard
         this.cardColors = new List<CardColor>();
         this.pointNums.Add(1);
         this.cardColors.Add(CardColor.BLUE);
+        this.cardDescription = "观察";
     }
 
     // Update is called once per frame

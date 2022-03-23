@@ -20,6 +20,7 @@ public class Tenacity : AbstractCard
         this.cardColors = new List<CardColor>();
         this.pointNums.Add(0);
         this.cardColors.Add(CardColor.WHITE);
+        this.cardDescription = "坚韧";
     }
 
     // Update is called once per frame
