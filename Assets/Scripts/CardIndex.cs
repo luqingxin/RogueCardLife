@@ -9,7 +9,7 @@ public class CardIndex : MonoBehaviour
 {
     List<Type> cardTypes;
 
-    public Type getCardAt(int x)
+    public Type getCardAt(int x)//获取第x号卡牌的Type
     {
         return cardTypes[x];
     }

@@ -40,7 +40,7 @@ public class GameActionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(actionState == ActionState.WAITING)
+        if(actionState == ActionState.WAITING)//如果当前无动作执行，则从队列头取出动作执行
         {
             if(actions.Count != 0)
             {
