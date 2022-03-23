@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//将选中的卡牌显示到最上方
 public class TopSetting : MonoBehaviour
 {
     private int childNum;

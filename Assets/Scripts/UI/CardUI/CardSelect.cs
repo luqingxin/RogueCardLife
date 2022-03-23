@@ -36,11 +36,18 @@ public class CardSelect : MonoBehaviour
     {
         MouseFollow();
         
-        if(Input.GetMouseButtonDown(1))
+        MouseRightButton();
+        MouseLeftButton();
+
+    }
+
+    private void MouseRightButton()
+    {
+        if (Input.GetMouseButtonDown(1))
         {
             RaycastHit2D hit = Physics2D.Raycast(mousePositionInWorld, Vector2.zero);
 
-            if(hit.collider != null && !isShowcased)
+            if (hit.collider != null && !isShowcased)
             {
                 selectedGameObj = hit.collider.gameObject;
                 formalPos = hit.collider.transform.position;
@@ -56,17 +63,20 @@ public class CardSelect : MonoBehaviour
                 showcase_frame.GetComponent<SpriteRenderer>().sprite = _cardPic;
 
             }
-            else if(isShowcased)
+            else if (isShowcased)
             {
                 isShowcased = false;
                 showcase.SetActive(false);
             }
         }
+    }
 
+    private void MouseLeftButton()
+    {
         //判断是否进入卡牌展示界面
-        if(isShowcased)
+        if (isShowcased)
         {
-            
+
         }
         else
         {

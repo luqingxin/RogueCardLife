@@ -2,36 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapBlock
+public class MapBlock : MonoBehaviour 
 {
-    private int type;
-    private int x;
-    private int y;
+    public int type;
+    public int x;
+    public int y;
+    public GameObject block_frame;
+    private bool selected = false;
 
-    public int getType()
+    public void setRecord()
     {
-        return type;
-    }
-    public void setTyep(int typeInput)
-    {
-        type = typeInput;
-    }
-
-    public int getX()
-    {
-        return x;
-    }
-    public void setX(int xInput)
-    {
-        x = xInput;
+        Debug.Log(x);
+        Debug.Log(y);
+        MapManager.targetX = x;
+        MapManager.targetY = y;
     }
 
-    public int getY()
+    private void OnMouseEnter()
     {
-        return y;
+        block_frame.SetActive(true);
     }
-    public void setY(int yInput)
+    
+    private void OnMouseExit()
     {
-        y = yInput;
+        if(!selected)
+            block_frame.SetActive(false);
     }
 }
