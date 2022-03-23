@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
-    public static bool cardSelected = false;//判断是否已经选择卡牌
+    public GameObject map_controller;
+    public GameObject card_controller;
+    public static bool map_active = false;
+    public static bool card_active = false;
 
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    //改变UI的使用情况
+    public void ChangeUI()
     {
-        
+        if (map_active)
+            map_controller.SetActive(true) ;
+
     }
 }
