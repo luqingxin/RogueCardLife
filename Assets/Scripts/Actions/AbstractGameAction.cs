@@ -23,6 +23,8 @@ public abstract class AbstractGameAction : MonoBehaviour
     public double duration;//动作的延迟时间
     public bool isDone;//动作是否已经完成
 
+
+
     public AbstractGameAction() { }
 
     public AbstractGameAction(AbstractCharacter s,AbstractCharacter t,AbstractGameRun g,int n)//游戏动作由来源，目标，当前游戏，数值构建

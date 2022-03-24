@@ -20,6 +20,7 @@ public class AdjustBreathing : AbstractCard
         this.pointNums.Add(1);
         this.cardColors.Add(CardColor.RED);
         this.cardDescription = "调息";
+        this.cardPic = "file://" + Application.dataPath + "/Resources/card_red";
     }
 
     // Update is called once per frame
