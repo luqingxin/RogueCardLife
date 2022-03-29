@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine; 
 /*
  * 游戏的局内状态，保存了抽牌堆弃牌堆手牌
  */
@@ -12,6 +12,13 @@ public class GameState : MonoBehaviour
     const int swapCost = 1;
     const int discardAndDrawCost = 2;
     AbstractGameRun gameRun;
+
+    public Dictionary<CardColor, int> pointOfColor;
+
+    public void AddPointOfColor(CardColor cl,int x)
+    {
+        pointOfColor[cl] += x;
+    }
 
     public void EndRound()
     {

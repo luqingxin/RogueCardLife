@@ -18,6 +18,8 @@ public class CardIndex : MonoBehaviour
     void Start()
     {
         //将卡牌的类加入索引
+        cardTypes = new List<Type>();
+
         cardTypes.Add(typeof(AdjustBreathing));
         cardTypes.Add(typeof(Conversation));
         cardTypes.Add(typeof(DefuseSkill));
