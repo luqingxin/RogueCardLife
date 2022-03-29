@@ -22,10 +22,11 @@ public class MapCreater : MonoBehaviour
     public GameObject block_fastness;
     public GameObject block_camp;
     public GameObject block_battlefield;
-    private List<GameObject> block_prefab_list = new List<GameObject>();
+    private List<GameObject> block_prefab_list;
 
     private void Start()
     {
+        block_prefab_list = new List<GameObject>();
         block_prefab_list.Add(block_road);
         block_prefab_list.Add(block_inn);
         block_prefab_list.Add(block_forest);
@@ -59,6 +60,7 @@ public class MapCreater : MonoBehaviour
     //初始化方块
     private void InstantiateMapBlock(int i, int j, int type)
     {
+        Debug.Log(block_prefab_list[type]);
         ini_block_obj = block_prefab_list[type];
         ini_block_obj = Instantiate(ini_block_obj);
         ini_block = ini_block_obj.GetComponent<MapBlock>();

@@ -7,7 +7,8 @@ public class TopSetting : MonoBehaviour
 {
     private int childNum;
     private bool topSetStatus;//记录置顶效果的状态
-    public GameObject topGameObj;
+    private GameObject topGameObj;
+    private GameObject infoObj;
 
     // Start is called before the first frame update
     void Start()
@@ -15,21 +16,24 @@ public class TopSetting : MonoBehaviour
         childNum = transform.childCount;
         topSetStatus = false;
         topGameObj = new GameObject();
+        infoObj = GetComponent<CardOperater>().showcase;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(CardSelect.isSelected && !topSetStatus)
+        //选中物体但并未置顶
+        if(CardOperater.isSelected && !topSetStatus)
         {
-            topGameObj = CardSelect.selectedGameObj;
+            topGameObj = CardOperater.selectedGameObj;
             topGameObj.transform.SetAsLastSibling();
+            infoObj.transform.SetAsLastSibling();
             topSetStatus = true;
         }
 
-        if(!CardSelect.isSelected && topSetStatus)
+        //未选中物体时重置状态
+        if(!CardOperater.isSelected && topSetStatus)
             topSetStatus = false;
 
-        //transform.GetChild(0).SetAsLastSibling();
     }
 }
