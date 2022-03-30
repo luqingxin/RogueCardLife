@@ -13,7 +13,7 @@ public enum ActionType
 }
 
 
-public abstract class AbstractGameAction : MonoBehaviour
+public abstract class AbstractGameAction
 {
     public AbstractCharacter source;//动作的来源
     public AbstractCharacter target;//动作的目标
@@ -25,7 +25,12 @@ public abstract class AbstractGameAction : MonoBehaviour
     public bool isStart;//动作是否已经开始执行
 
 
-    public AbstractGameAction() { }
+    public AbstractGameAction()
+    {
+        duration = 0.5;
+        isDone = false;
+        isStart = false;
+    }
 
     public AbstractGameAction(AbstractCharacter s,AbstractCharacter t,AbstractGameRun g,int n)//游戏动作由来源，目标，当前游戏，数值构建
     {

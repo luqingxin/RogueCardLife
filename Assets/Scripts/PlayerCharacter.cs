@@ -4,7 +4,7 @@ using UnityEngine;
 /*
  * 玩家角色类
  */
-public abstract class PlayerCharacter : AbstractCharacter
+public class PlayerCharacter : AbstractCharacter
 {
 
     public CardPile playerCardPile;

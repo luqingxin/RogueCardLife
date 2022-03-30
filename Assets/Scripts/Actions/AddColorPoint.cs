@@ -8,9 +8,15 @@ public class AddColorPoint : AbstractGameAction
     public CardColor cardColor;
     public int point;
 
+    public AddColorPoint(CardColor c,int x)
+    {
+        cardColor = c;
+        point = x;
+    }
+
     public override void Effect()
     {
-        throw new System.NotImplementedException();
+        gameRun.gameState.AddPointOfColor(cardColor, point);
     }
 
     // Start is called before the first frame update

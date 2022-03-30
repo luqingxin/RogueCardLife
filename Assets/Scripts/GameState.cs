@@ -11,7 +11,7 @@ public class GameState : MonoBehaviour
     List<CardPair> cardPairs;//N对牌
     const int swapCost = 1;
     const int discardAndDrawCost = 2;
-    AbstractGameRun gameRun;
+    public AbstractGameRun gameRun;
 
     public Dictionary<CardColor, int> pointOfColor;
 
@@ -91,6 +91,8 @@ public class GameState : MonoBehaviour
         {
             p.cardA.Effect();//触发卡牌AB的效果
             p.cardB.Effect();
+            addActionToButtom(new AddColorPoint(p.cardA.cardColors[0], p.cardA.cardNum));
+            addActionToButtom(new AddColorPoint(p.cardB.cardColors[0], p.cardB.cardNum));
             //弃掉或消耗这两张
             if (p.cardA.isExhaust) 
             { 

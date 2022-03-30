@@ -34,7 +34,7 @@ public class GameActionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        actions = new List<AbstractGameAction>();
     }
 
     // Update is called once per frame
@@ -47,6 +47,7 @@ public class GameActionManager : MonoBehaviour
                 currentAction = actions[0];
                 actions.RemoveAt(0);
                 actionState = ActionState.EXECUTING;
+                currentAction.isStart = true;
                 currentAction.Effect();
             }
         }
@@ -54,11 +55,15 @@ public class GameActionManager : MonoBehaviour
         {
             if (currentAction.isDone == true)
             {
-
+                actionState = ActionState.WAITING;
             }
-            else
+            else//剩余时间耗尽即动作完成，后期很可能需要修改
             {
-
+                currentAction.duration -= Time.deltaTime;
+                if(currentAction.duration <= 0)
+                {
+                    currentAction.isDone = true;
+                }
             }
         }
     }
