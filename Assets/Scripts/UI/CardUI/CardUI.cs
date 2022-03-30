@@ -54,6 +54,7 @@ public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        formalPos = transform.position;
         transform.position = eventData.position;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
         CardOperater.isDraging = true;
