@@ -22,7 +22,7 @@ public abstract class AbstractGameAction : MonoBehaviour
 
     public double duration;//动作的延迟时间
     public bool isDone;//动作是否已经完成
-
+    public bool isStart;//动作是否已经开始执行
 
 
     public AbstractGameAction() { }

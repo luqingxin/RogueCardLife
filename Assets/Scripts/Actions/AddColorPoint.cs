@@ -1,21 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
- * 随机事件的抽象类
- */
-public class AbstractRandEvent : MonoBehaviour
+//增加某项颜色点数的动作
+public class AddColorPoint : AbstractGameAction
 {
-    public GameState gameState;
-    public AbstractGameRun gameRun;
-    public string eventName;
 
-    public int HappenPossibility()
+    public CardColor cardColor;
+    public int point;
+
+    public override void Effect()
     {
-        return 0;
+        throw new System.NotImplementedException();
     }
-
-    //public void Effect() { }
 
     // Start is called before the first frame update
     void Start()

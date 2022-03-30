@@ -16,7 +16,7 @@ public class MeetRobber : AbstractRandEvent
         gameRun.gameActionManager.addActionToBottom(action);
     }
 
-    public new void Effect()
+    /*public new void Effect()
     {
         if (gameState.pointOfColor[CardColor.RED] >= 8 && gameState.pointOfColor[CardColor.YELLOW] >= 8)//以武服人
         {
@@ -34,7 +34,7 @@ public class MeetRobber : AbstractRandEvent
         {
 
         }
-    }
+    }*/
 
     // Start is called before the first frame update
     void Start()

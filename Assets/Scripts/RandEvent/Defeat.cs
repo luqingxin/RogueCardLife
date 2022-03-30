@@ -1,21 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
- * 随机事件的抽象类
- */
-public class AbstractRandEvent : MonoBehaviour
+//失败
+public class Defeat : AbstractEventChoice
 {
-    public GameState gameState;
-    public AbstractGameRun gameRun;
-    public string eventName;
 
-    public int HappenPossibility()
+    public override bool checkCondition()
     {
-        return 0;
+        return true;
     }
+    public override void Effect()
+    {
 
-    //public void Effect() { }
+    }
 
     // Start is called before the first frame update
     void Start()
