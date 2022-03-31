@@ -1,26 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
- * 弃牌的动作
- */
-public class DiscardCardAction : AbstractGameAction
+//以武服人
+public class VictoryByForce : AbstractEventChoice
 {
-    AbstractCard card;
-    public DiscardCardAction(AbstractCard x,AbstractGameRun g)//指定弃牌
-    {
-        gameRun = g;
-        card = x;
-    }
 
+    public override bool checkCondition()
+    {
+        if(gameState.pointOfColor[CardColor.RED] >= 8 && gameState.pointOfColor[CardColor.YELLOW] >= 8)
+        {
+            return true;
+        }
+        return false;
+    }
     public override void Effect()
     {
-        gameRun.gameState.DiscardCard(card);
+
     }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

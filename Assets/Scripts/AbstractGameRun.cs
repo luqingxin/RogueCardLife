@@ -11,6 +11,7 @@ public class AbstractGameRun : MonoBehaviour
     public GameActionManager gameActionManager;
     public GameState gameState;
     public PlayerCharacter playerCharacter;
+    public CardIndex cardIndex;
 
     // Start is called before the first frame update
     void Start()

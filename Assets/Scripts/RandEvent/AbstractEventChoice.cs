@@ -1,21 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
- * 随机事件的抽象类
- */
-public class AbstractRandEvent : MonoBehaviour
+
+//随机事件中某个选项的类的父类
+public class AbstractEventChoice
 {
+
     public GameState gameState;
     public AbstractGameRun gameRun;
-    public string eventName;
+    public string choiceName;
 
-    public int HappenPossibility()
+    //判断条件是否达成
+    public virtual bool checkCondition()
     {
-        return 0;
+        return false;
     }
 
-    //public void Effect() { }
+    public virtual void Effect()
+    {
+
+    }
 
     // Start is called before the first frame update
     void Start()

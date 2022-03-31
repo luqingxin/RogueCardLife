@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine; 
 /*
  * 游戏的局内状态，保存了抽牌堆弃牌堆手牌
  */
@@ -8,10 +8,23 @@ public class GameState : MonoBehaviour
 {
     CardPile drawPile;//抽牌堆
     CardPile discardPile;//弃牌堆
-    List<CardPair> cardPairs;//N对牌
+    public List<CardPair> cardPairs;//N对牌
     const int swapCost = 1;
     const int discardAndDrawCost = 2;
-    AbstractGameRun gameRun;
+    public AbstractGameRun gameRun;
+
+    public Dictionary<CardColor, int> pointOfColor;
+
+    public void AddPointOfColor(CardColor cl,int x)
+    {
+        if(cl == CardColor.WHITE)
+        {
+            return;
+        }
+        pointOfColor[cl] += x;
+        Debug.Log(cl);
+        Debug.Log(x);
+    }
 
     public void EndRound()
     {
@@ -84,6 +97,8 @@ public class GameState : MonoBehaviour
         {
             p.cardA.Effect();//触发卡牌AB的效果
             p.cardB.Effect();
+            addActionToButtom(new AddColorPoint(p.cardA.cardColors[0], p.cardA.pointNums[0],gameRun));
+            addActionToButtom(new AddColorPoint(p.cardB.cardColors[0], p.cardB.pointNums[0],gameRun));
             //弃掉或消耗这两张
             if (p.cardA.isExhaust) 
             { 
@@ -114,6 +129,8 @@ public class GameState : MonoBehaviour
 
     public bool SwapCard(AbstractCard x,AbstractCard y)//交换两张牌的位置，返回值true表示成功交换，false表示失败
     {
+        //Debug.Log(x.cardDescription);
+        //Debug.Log(y.cardDescription);
         if (x.cardType == CardType.TASK || y.cardType == CardType.TASK)//任务卡不能被玩家移动
         {
             return false;
@@ -177,7 +194,12 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cardPairs = new List<CardPair>();
+        pointOfColor = new Dictionary<CardColor, int>();
+        pointOfColor[CardColor.RED] = 0;
+        pointOfColor[CardColor.YELLOW] = 0;
+        pointOfColor[CardColor.GREEN] = 0;
+        pointOfColor[CardColor.BLUE] = 0;
     }
 
     // Update is called once per frame

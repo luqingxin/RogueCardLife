@@ -30,16 +30,18 @@ public abstract class AbstractCard : MonoBehaviour
     public string cardDescription;//卡牌的描述
     public string cardPic;//卡牌图片的路径
 
-    public void addActionToTop(AbstractGameAction action)
+    public void AddActionToTop(AbstractGameAction action)
     {
         gameRun.gameActionManager.addActionToTop(action);
     }
-    public void addActionToButtom(AbstractGameAction action)
+    public void AddActionToButtom(AbstractGameAction action)
     {
         gameRun.gameActionManager.addActionToBottom(action);
     }
     public static bool CardCombine(AbstractCard CardA,AbstractCard CardB)//判断卡牌能否组合
     {
+        Debug.Log(CardA);
+        Debug.Log(CardB);
         if(CardA == null || CardB == null)
         {
             return false;

@@ -1,26 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
- * 弃牌的动作
- */
-public class DiscardCardAction : AbstractGameAction
+//交换两张卡牌的动作
+public class SwapCardAction : AbstractGameAction
 {
-    AbstractCard card;
-    public DiscardCardAction(AbstractCard x,AbstractGameRun g)//指定弃牌
+
+    public AbstractCard cardA, cardB;
+
+    public SwapCardAction(AbstractCard x,AbstractCard y,AbstractGameRun g)
     {
+        cardA = x;
+        cardB = y;
         gameRun = g;
-        card = x;
     }
 
     public override void Effect()
     {
-        gameRun.gameState.DiscardCard(card);
+        gameRun.gameState.SwapCard(cardA, cardB);
     }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

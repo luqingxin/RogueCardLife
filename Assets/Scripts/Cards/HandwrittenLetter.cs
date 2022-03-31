@@ -9,7 +9,7 @@ public class HandwrittenLetter : AbstractCard
 
     public override void Effect()
     {
-        addActionToButtom(new RemoveFromPlayerCardPile(this,gameRun));
+        AddActionToButtom(new RemoveFromPlayerCardPile(this,gameRun));
     }
 
     // Start is called before the first frame update

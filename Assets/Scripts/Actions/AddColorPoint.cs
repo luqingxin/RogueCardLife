@@ -1,26 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
- * 弃牌的动作
- */
-public class DiscardCardAction : AbstractGameAction
+//增加某项颜色点数的动作
+public class AddColorPoint : AbstractGameAction
 {
-    AbstractCard card;
-    public DiscardCardAction(AbstractCard x,AbstractGameRun g)//指定弃牌
+
+    public CardColor cardColor;
+    public int point;
+
+    public AddColorPoint(CardColor c,int x,AbstractGameRun g)
     {
+        cardColor = c;
+        point = x;
         gameRun = g;
-        card = x;
     }
 
     public override void Effect()
     {
-        gameRun.gameState.DiscardCard(card);
+        gameRun.gameState.AddPointOfColor(cardColor, point);
     }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
