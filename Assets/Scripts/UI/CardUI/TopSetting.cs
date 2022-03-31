@@ -8,7 +8,7 @@ public class TopSetting : MonoBehaviour
     private int childNum;
     private bool topSetStatus;//记录置顶效果的状态
     private GameObject topGameObj;
-    private GameObject infoObj;
+    private GameObject otherObj;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class TopSetting : MonoBehaviour
         childNum = transform.childCount;
         topSetStatus = false;
         topGameObj = new GameObject();
-        infoObj = GetComponent<CardOperater>().showcase;
+        otherObj = GetComponent<CardOperater>().showcase.transform.parent.gameObject;
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class TopSetting : MonoBehaviour
         {
             topGameObj = CardOperater.selectedGameObj;
             topGameObj.transform.SetAsLastSibling();
-            infoObj.transform.SetAsLastSibling();
+            otherObj.transform.SetAsLastSibling();
             topSetStatus = true;
         }
 
