@@ -8,10 +8,11 @@ public class AddColorPoint : AbstractGameAction
     public CardColor cardColor;
     public int point;
 
-    public AddColorPoint(CardColor c,int x)
+    public AddColorPoint(CardColor c,int x,AbstractGameRun g)
     {
         cardColor = c;
         point = x;
+        gameRun = g;
     }
 
     public override void Effect()

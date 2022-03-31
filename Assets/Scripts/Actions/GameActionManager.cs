@@ -35,6 +35,7 @@ public class GameActionManager : MonoBehaviour
     void Start()
     {
         actions = new List<AbstractGameAction>();
+        actionState = ActionState.WAITING;
     }
 
     // Update is called once per frame
@@ -59,6 +60,7 @@ public class GameActionManager : MonoBehaviour
             }
             else//剩余时间耗尽即动作完成，后期很可能需要修改
             {
+                //Debug.Log(currentAction);
                 currentAction.duration -= Time.deltaTime;
                 if(currentAction.duration <= 0)
                 {

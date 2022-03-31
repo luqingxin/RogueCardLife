@@ -7,10 +7,11 @@ public class SwapCardAction : AbstractGameAction
 
     public AbstractCard cardA, cardB;
 
-    public SwapCardAction(AbstractCard x,AbstractCard y)
+    public SwapCardAction(AbstractCard x,AbstractCard y,AbstractGameRun g)
     {
-        x = cardA;
-        y = cardB;
+        cardA = x;
+        cardB = y;
+        gameRun = g;
     }
 
     public override void Effect()

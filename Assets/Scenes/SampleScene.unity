@@ -1635,8 +1635,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testObject: {fileID: 0}
-  gameRun: {fileID: 0}
+  gameRun: {fileID: 126564075}
   sprite: {fileID: 0}
+  cardA: {fileID: 1273666884}
+  cardB: {fileID: 1280831041}
 --- !u!4 &1190613771
 Transform:
   m_ObjectHideFlags: 0
@@ -1666,6 +1668,7 @@ GameObject:
   - component: {fileID: 1273666882}
   - component: {fileID: 1273666883}
   - component: {fileID: 1273666878}
+  - component: {fileID: 1273666884}
   m_Layer: 9
   m_Name: card_blue
   m_TagString: Untagged
@@ -1800,7 +1803,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexInList: 0
-  gameRun: {fileID: 0}
 --- !u!61 &1273666883
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1827,6 +1829,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 142.5, y: 217.5}
   m_EdgeRadius: 0
+--- !u!114 &1273666884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273666876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 060bd31518fea544f9c467c53462ebb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardColors: 
+  cardType: 0
+  cardSource: {fileID: 0}
+  pointNums: 
+  cardNum: 0
+  cardName: 
+  gameRun: {fileID: 126564075}
+  magicNumber1: 0
+  magicNumber2: 0
+  NumInPlayerCardPile: 0
+  isExhaust: 0
+  cardDescription: 
+  cardPic: 
 --- !u!1 &1280831033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,6 +1869,7 @@ GameObject:
   - component: {fileID: 1280831036}
   - component: {fileID: 1280831035}
   - component: {fileID: 1280831038}
+  - component: {fileID: 1280831041}
   m_Layer: 9
   m_Name: card_red
   m_TagString: Untagged
@@ -1909,7 +1937,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexInList: 0
-  gameRun: {fileID: 0}
 --- !u!114 &1280831037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2003,6 +2030,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280831033}
   m_CullTransparentMesh: 0
+--- !u!114 &1280831041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280831033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5b5a52644ca7d4f8f57536308f0c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardColors: 
+  cardType: 0
+  cardSource: {fileID: 0}
+  pointNums: 
+  cardNum: 0
+  cardName: 
+  gameRun: {fileID: 126564075}
+  magicNumber1: 0
+  magicNumber2: 0
+  NumInPlayerCardPile: 0
+  isExhaust: 0
+  cardDescription: 
+  cardPic: 
 --- !u!1 &1290740071
 GameObject:
   m_ObjectHideFlags: 0

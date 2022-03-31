@@ -85,7 +85,9 @@ public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,I
                 formalPos = targetPos;
                 AbstractCard cardA = this.GetComponent<AbstractCard>();//找到两张卡的脚本
                 AbstractCard cardB = eventData.pointerCurrentRaycast.gameObject.GetComponent<AbstractCard>();
-                cardA.AddActionToButtom(new SwapCardAction(cardB, cardA));//逻辑上交换这两张卡
+                //Debug.Log(cardA.cardDescription);
+                //Debug.Log(cardB.cardDescription);
+                cardA.AddActionToButtom(new SwapCardAction(cardB, cardA,cardA.gameRun));//逻辑上交换这两张卡
             }
         }
         transform.position = formalPos;
