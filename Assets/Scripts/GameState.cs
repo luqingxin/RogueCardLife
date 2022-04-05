@@ -58,6 +58,11 @@ public class GameState : MonoBehaviour
     public bool DrawCard()//抽一张牌
     {
         AbstractCard y = drawPile.DrawCard();//抽取新牌y到第一个空位
+        if(y == null)
+        {
+            //addActionToTop(new )
+            return false;
+        }
         foreach (CardPair p in cardPairs)
         {
             if (p.cardA == null)
