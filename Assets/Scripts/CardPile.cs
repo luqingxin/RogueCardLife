@@ -47,7 +47,7 @@ public class CardPile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cards = new List<AbstractCard>();
     }
 
     // Update is called once per frame
