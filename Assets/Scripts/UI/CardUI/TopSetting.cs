@@ -5,18 +5,17 @@ using UnityEngine;
 //将选中的卡牌显示到最上方
 public class TopSetting : MonoBehaviour
 {
-    private int childNum;
     private bool topSetStatus;//记录置顶效果的状态
     private GameObject topGameObj;
-    private GameObject otherObj;
+    private GameObject infoObj;
 
     // Start is called before the first frame update
     void Start()
     {
-        childNum = transform.childCount;
         topSetStatus = false;
         topGameObj = new GameObject();
-        otherObj = GetComponent<CardOperater>().showcase.transform.parent.gameObject;
+        infoObj = GetComponent<CardOperater>().showcase;
+
     }
 
     // Update is called once per frame
@@ -27,7 +26,8 @@ public class TopSetting : MonoBehaviour
         {
             topGameObj = CardOperater.selectedGameObj;
             topGameObj.transform.SetAsLastSibling();
-            otherObj.transform.SetAsLastSibling();
+            infoObj.transform.SetAsLastSibling();
+
             topSetStatus = true;
         }
 

@@ -6,11 +6,11 @@ using UnityEngine;
  */
 public class GameState : MonoBehaviour
 {
-    CardPile drawPile;//抽牌堆
-    CardPile discardPile;//弃牌堆
+    public CardPile drawPile;//抽牌堆
+    public CardPile discardPile;//弃牌堆
     public List<CardPair> cardPairs;//N对牌
-    const int swapCost = 1;
-    const int discardAndDrawCost = 2;
+    public int swapCost;
+    public int discardAndDrawCost;
     public AbstractGameRun gameRun;
 
     public Dictionary<CardColor, int> pointOfColor;
@@ -58,6 +58,11 @@ public class GameState : MonoBehaviour
     public bool DrawCard()//抽一张牌
     {
         AbstractCard y = drawPile.DrawCard();//抽取新牌y到第一个空位
+        if(y == null)
+        {
+            //addActionToTop(new )
+            return false;
+        }
         foreach (CardPair p in cardPairs)
         {
             if (p.cardA == null)

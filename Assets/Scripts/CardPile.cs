@@ -39,6 +39,10 @@ public class CardPile : MonoBehaviour
 
     public AbstractCard DrawCard()//抽一张牌
     {
+        if(cards.Count == 0)
+        {
+            return null;
+        }
         AbstractCard x = cards[0];
         cards.RemoveAt(0);
         return x;
@@ -47,7 +51,7 @@ public class CardPile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cards = new List<AbstractCard>();
     }
 
     // Update is called once per frame
