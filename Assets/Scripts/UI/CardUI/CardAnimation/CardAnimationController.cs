@@ -27,6 +27,16 @@ public class CardAnimationController : MonoBehaviour
         }
     }
 
+    //把卡移动到抽牌堆的动画
+    public void BackDraw(GameObject card)
+    {
+        card.transform.position = Vector2.Lerp(card.transform.position, drawPos, Time.deltaTime * speed);
+        if (card.transform.position.Equals(discardPos))
+        {
+
+        }
+    }
+
     //弃牌动画
     public void Discard(GameObject card)
     {

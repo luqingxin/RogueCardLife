@@ -15,6 +15,16 @@ public class GameState : MonoBehaviour
 
     public Dictionary<CardColor, int> pointOfColor;
 
+    public void DisToDraw()//将牌从弃牌堆移动到抽牌堆
+    {
+        while(discardPile.cards.Count != 0)
+        {
+            AbstractCard x = discardPile.DrawCard();
+            drawPile.AddCard(x);
+            //gameRun.cardAnimationController.
+        }
+    }
+
     public void AddPointOfColor(CardColor cl,int x)
     {
         if(cl == CardColor.WHITE)
@@ -63,6 +73,7 @@ public class GameState : MonoBehaviour
             if(discardPile.cards.Count != 0)//如果有弃牌就把弃牌堆挪过去
             {
                 addActionToTop(new DiscardPileToDrawPile(gameRun));
+                addActionToTop(new ShuffleDrawPile(gameRun));
                 addActionToTop(new DrawCardAction(gameRun));
             }
             else//没有弃牌就添加一张新牌
