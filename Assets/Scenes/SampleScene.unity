@@ -1425,7 +1425,7 @@ MonoBehaviour:
   gameRun: {fileID: 126564075}
   money: 0
   playerCardPile: {fileID: 0}
-  energy: 10
+  energy: 20
   endurance: 0
 --- !u!1 &884073352
 GameObject:

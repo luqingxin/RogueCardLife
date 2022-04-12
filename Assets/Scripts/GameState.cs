@@ -58,8 +58,18 @@ public class GameState : MonoBehaviour
     public bool DrawCard()//抽一张牌
     {
         AbstractCard y = drawPile.DrawCard();//抽取新牌y到第一个空位
-        if(y == null)
+        if(y == null)//如果没牌抽了
         {
+            if(discardPile.cards.Count != 0)//如果有弃牌就把弃牌堆挪过去
+            {
+                addActionToTop(new DiscardPileToDrawPile(gameRun));
+                addActionToTop(new DrawCardAction(gameRun));
+            }
+            else//没有弃牌就添加一张新牌
+            {
+                //补一张新牌
+                addActionToTop(new DrawCardAction(gameRun));
+            }
             //addActionToTop(new )
             return false;
         }
