@@ -15,6 +15,7 @@ public class CardAnimationController : MonoBehaviour
     private void Start()
     {
         discardPos = discardObj.transform.position;
+        discardPos.x += 200;
         drawPos = drawObj.transform.position;
     }
 
