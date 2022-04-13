@@ -85,18 +85,21 @@ public class GameState : MonoBehaviour
             //addActionToTop(new )
             return -1;
         }
-        foreach (CardPair p in cardPairs)
+        for(int i=0;i<cardPairs.Count;i++)
         {
+            CardPair p = cardPairs[i];
             if (p.cardA == null)
             {
                 p.cardA = y;
+                CheckPairAndEffect(p);
+                return i * 2;
             }
             if (p.cardB == null)
             {
                 p.cardB = y;
+                CheckPairAndEffect(p);
+                return i * 2 + 1;
             }
-            CheckPairAndEffect(p);
-            return 1;
         }
         return -1;
     }
@@ -216,6 +219,19 @@ public class GameState : MonoBehaviour
     public void addActionToButtom(AbstractGameAction action)
     {
         gameRun.gameActionManager.addActionToBottom(action);
+    }
+
+    //返回第x张牌
+    public AbstractCard getCardOfInt(int x)
+    {
+        if(x%2 == 0)
+        {
+            return cardPairs[x / 2].cardA;
+        }
+        else
+        {
+            return cardPairs[x / 2].cardB;
+        }
     }
 
     // Start is called before the first frame update

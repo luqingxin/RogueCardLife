@@ -7,6 +7,7 @@ using UnityEngine;
 public class DrawCardAction : AbstractGameAction
 {
     bool drawDone;
+    int cardNum;
 
     public DrawCardAction(AbstractGameRun g)
     {
@@ -18,10 +19,20 @@ public class DrawCardAction : AbstractGameAction
     {
         if(drawDone == false)
         {
-            gameRun.gameState.DrawCard();
+            cardNum = gameRun.gameState.DrawCard();
             drawDone = true;
         }
-        //if()
+        if(cardNum != -1)
+        {
+            AbstractCard card;
+            card = gameRun.gameState.getCardOfInt(cardNum);
+            bool a;
+            a = gameRun.cardAnimationController.DrawCard(card.gameObject, CardPositions.positions[cardNum]);
+        }
+        else
+        {
+            isDone = true;
+        }
     }
 
     // Start is called before the first frame update
