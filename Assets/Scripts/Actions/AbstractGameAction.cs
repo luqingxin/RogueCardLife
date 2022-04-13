@@ -21,7 +21,7 @@ public abstract class AbstractGameAction
     public int magicNum;//该动作的数值大小
 
     public double duration;//动作的延迟时间
-    public bool isDone;//动作是否已经完成
+    public bool isDone;//整个动作是否已经完成
     public bool isStart;//动作是否已经开始执行
 
 

@@ -65,7 +65,7 @@ public class GameState : MonoBehaviour
         return false;
     }
 
-    public bool DrawCard()//抽一张牌
+    public int DrawCard()//抽一张牌
     {
         AbstractCard y = drawPile.DrawCard();//抽取新牌y到第一个空位
         if(y == null)//如果没牌抽了
@@ -79,10 +79,11 @@ public class GameState : MonoBehaviour
             else//没有弃牌就添加一张新牌
             {
                 //补一张新牌
+                addActionToTop(new AddNothingToDrawPile(gameRun));
                 addActionToTop(new DrawCardAction(gameRun));
             }
             //addActionToTop(new )
-            return false;
+            return -1;
         }
         foreach (CardPair p in cardPairs)
         {
@@ -95,9 +96,9 @@ public class GameState : MonoBehaviour
                 p.cardB = y;
             }
             CheckPairAndEffect(p);
-            return true;
+            return 1;
         }
-        return false;
+        return -1;
     }
 
     public bool Exhaust(AbstractCard x)

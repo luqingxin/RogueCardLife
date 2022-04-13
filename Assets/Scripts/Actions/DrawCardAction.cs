@@ -6,15 +6,22 @@ using UnityEngine;
  */
 public class DrawCardAction : AbstractGameAction
 {
+    bool drawDone;
 
     public DrawCardAction(AbstractGameRun g)
     {
         gameRun = g;
+        drawDone = false;
     }
 
     public override void Effect()
     {
-        gameRun.gameState.DrawCard();
+        if(drawDone == false)
+        {
+            gameRun.gameState.DrawCard();
+            drawDone = true;
+        }
+        //if()
     }
 
     // Start is called before the first frame update

@@ -7,15 +7,29 @@ using UnityEngine;
 public class DiscardCardAction : AbstractGameAction
 {
     AbstractCard card;
+    bool discardDone;
+
     public DiscardCardAction(AbstractCard x,AbstractGameRun g)//指定弃牌
     {
         gameRun = g;
         card = x;
+        discardDone = false;
     }
 
     public override void Effect()
     {
-        gameRun.gameState.DiscardCard(card);
+        //先执行逻辑上的弃牌
+        if(discardDone == false)
+        {
+            gameRun.gameState.DiscardCard(card);
+            discardDone = true;
+        }
+        //移动物体，如果到达则动作完成
+        bool a = gameRun.cardAnimationController.Discard(card.gameObject);
+        if (a == true)
+        {
+            isDone = true;
+        }
     }
     // Start is called before the first frame update
     void Start()
