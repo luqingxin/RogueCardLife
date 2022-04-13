@@ -60,7 +60,7 @@ public class MapCreater : MonoBehaviour
     //初始化方块
     private void InstantiateMapBlock(int i, int j, int type)
     {
-        Debug.Log(block_prefab_list[type]);
+        //Debug.Log(block_prefab_list[type]);
         ini_block_obj = block_prefab_list[type];
         ini_block_obj = Instantiate(ini_block_obj);
         ini_block = ini_block_obj.GetComponent<MapBlock>();
