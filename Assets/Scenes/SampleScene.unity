@@ -2128,8 +2128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bca07bf928d64b4da2b733cd6c1ba70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  discardObj: {fileID: 3618368}
-  drawObj: {fileID: 1222854950}
+  discardObj: {fileID: 1222854950}
+  drawObj: {fileID: 3618368}
 --- !u!4 &1162455133
 Transform:
   m_ObjectHideFlags: 0

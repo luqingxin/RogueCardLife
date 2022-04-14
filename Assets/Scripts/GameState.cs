@@ -32,8 +32,8 @@ public class GameState : MonoBehaviour
             return;
         }
         pointOfColor[cl] += x;
-        Debug.Log(cl);
-        Debug.Log(x);
+        //Debug.Log(cl);
+        //Debug.Log(x);
     }
 
     public void EndRound()
@@ -72,15 +72,15 @@ public class GameState : MonoBehaviour
         {
             if(discardPile.cards.Count != 0)//如果有弃牌就把弃牌堆挪过去
             {
-                addActionToTop(new DiscardPileToDrawPile(gameRun));
-                addActionToTop(new ShuffleDrawPile(gameRun));
                 addActionToTop(new DrawCardAction(gameRun));
+                addActionToTop(new ShuffleDrawPile(gameRun));
+                addActionToTop(new DiscardPileToDrawPile(gameRun));
             }
             else//没有弃牌就添加一张新牌
             {
                 //补一张新牌
-                addActionToTop(new AddNothingToDrawPile(gameRun));
                 addActionToTop(new DrawCardAction(gameRun));
+                addActionToTop(new AddNothingToDrawPile(gameRun));
             }
             //addActionToTop(new )
             return -1;

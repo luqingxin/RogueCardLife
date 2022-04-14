@@ -40,8 +40,8 @@ public abstract class AbstractCard : MonoBehaviour
     }
     public static bool CardCombine(AbstractCard CardA,AbstractCard CardB)//判断卡牌能否组合
     {
-        Debug.Log(CardA);
-        Debug.Log(CardB);
+        //Debug.Log(CardA);
+        //Debug.Log(CardB);
         if(CardA == null || CardB == null)
         {
             return false;

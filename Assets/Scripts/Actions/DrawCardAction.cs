@@ -28,6 +28,10 @@ public class DrawCardAction : AbstractGameAction
             card = gameRun.gameState.getCardOfInt(cardNum);
             bool a;
             a = gameRun.cardAnimationController.DrawCard(card.gameObject, CardPositions.positions[cardNum]);
+            if (a == true)
+            {
+                isDone = true;
+            }
         }
         else
         {

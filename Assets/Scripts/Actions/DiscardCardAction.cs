@@ -26,6 +26,7 @@ public class DiscardCardAction : AbstractGameAction
         }
         //移动物体，如果到达则动作完成
         bool a = gameRun.cardAnimationController.Discard(card.gameObject);
+        //Debug.Log(a);
         if (a == true)
         {
             isDone = true;

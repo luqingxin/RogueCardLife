@@ -50,6 +50,7 @@ public class GameActionManager : MonoBehaviour
                 actionState = ActionState.EXECUTING;
                 currentAction.isStart = true;
                 currentAction.Effect();
+                Debug.Log(currentAction);
             }
         }
         else if(actionState == ActionState.EXECUTING)

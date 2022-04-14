@@ -13,6 +13,7 @@ public class ShuffleDrawPile : AbstractGameAction
     public override void Effect()
     {
         gameRun.gameState.drawPile.ShuffleCards();
+        isDone = true;
     }
 
     // Start is called before the first frame update
