@@ -14,6 +14,8 @@ public abstract class AbstractCharacter : MonoBehaviour
     public List<int> titleList;//角色的标签
     public AbstractGameRun gameRun;
     public int money;//剩余金钱
+    public int mapX;
+    public int mapY;
 
 
     public void GainStrength(int x)// 获取x点内功
