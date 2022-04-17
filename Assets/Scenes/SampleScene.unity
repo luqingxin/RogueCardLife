@@ -476,7 +476,7 @@ MonoBehaviour:
   playerCharacter: {fileID: 865011072}
   cardIndex: {fileID: 453610103}
   cardAnimationController: {fileID: 1162455132}
-  cardCanvas: {fileID: 0}
+  cardCanvas: {fileID: 75812491}
 --- !u!1 &144536323
 GameObject:
   m_ObjectHideFlags: 0
