@@ -99,7 +99,7 @@ public class GameState : MonoBehaviour
             {
                 p.cardB = y;
                 //取消check
-                CheckPairAndEffect(p);
+                //CheckPairAndEffect(p);
                 return i * 2 + 1;
             }
         }

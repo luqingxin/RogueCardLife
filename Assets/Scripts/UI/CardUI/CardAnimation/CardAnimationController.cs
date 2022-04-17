@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CardAnimationController : MonoBehaviour
 {
-    private float speed = 1.5f;
+    public float speed;
 
     public GameObject discardObj;
     public GameObject drawObj;

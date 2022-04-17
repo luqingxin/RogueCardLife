@@ -476,6 +476,7 @@ MonoBehaviour:
   playerCharacter: {fileID: 865011072}
   cardIndex: {fileID: 453610103}
   cardAnimationController: {fileID: 1162455132}
+  cardCanvas: {fileID: 0}
 --- !u!1 &144536323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,6 +1823,8 @@ MonoBehaviour:
   titleList: 
   gameRun: {fileID: 126564075}
   money: 0
+  mapX: 0
+  mapY: 0
   playerCardPile: {fileID: 0}
   energy: 10
   endurance: 0
@@ -2128,6 +2131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bca07bf928d64b4da2b733cd6c1ba70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
   discardObj: {fileID: 1222854950}
   drawObj: {fileID: 3618368}
 --- !u!4 &1162455133
