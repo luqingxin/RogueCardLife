@@ -21,15 +21,26 @@ public class AbstractEventChoice
 
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void ChangeMoney(int money)
     {
-        
+        gameRun.playerCharacter.money += money;
+    }
+    
+    public void ChangePower(int type,int count)
+    {
+        //type0~3对应三种属性值
+        switch(type)
+        {
+            case 0:gameRun.playerCharacter.strength += count; break;
+            case 1: gameRun.playerCharacter.move += count; break;
+            case 2: gameRun.playerCharacter.wisdom += count; break;
+            case 3: gameRun.playerCharacter.communication += count; break;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeMapPosition(int x,int y)
     {
-        
+        gameRun.playerCharacter.mapX = x;
+        gameRun.playerCharacter.mapY = y;
     }
 }

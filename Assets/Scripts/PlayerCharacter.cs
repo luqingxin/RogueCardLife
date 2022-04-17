@@ -18,7 +18,9 @@ public class PlayerCharacter : AbstractCharacter
         strength = 1;
         move = 1;
         wisdom = 1;
-        communication = 1;        
+        communication = 1;
+        mapX = 0;
+        mapY = 0;
     }
 
     // Start is called before the first frame update

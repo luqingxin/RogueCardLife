@@ -33,6 +33,7 @@ public class CardIndex : MonoBehaviour
         cardTypes.Add(typeof(StoragePower));
         cardTypes.Add(typeof(Tenacity));
         cardTypes.Add(typeof(Thinking));
+        cardTypes.Add(typeof(NothingToDo));
     }
 
     // Update is called once per frame

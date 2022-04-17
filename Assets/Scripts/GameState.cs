@@ -91,12 +91,14 @@ public class GameState : MonoBehaviour
             if (p.cardA == null)
             {
                 p.cardA = y;
-                CheckPairAndEffect(p);
+                //取消抽牌后的check
+                //CheckPairAndEffect(p);
                 return i * 2;
             }
             if (p.cardB == null)
             {
                 p.cardB = y;
+                //取消check
                 CheckPairAndEffect(p);
                 return i * 2 + 1;
             }
@@ -150,7 +152,7 @@ public class GameState : MonoBehaviour
             addActionToButtom(new DrawCardAction(gameRun));//再抽两张
             /*DiscardCard(p.cardA);//弃掉这两张
             DiscardCard(p.cardB);
-            DrawCard();//再抽两张
+            DrawCard();//再抽两张m  
             DrawCard();*/
             return true;
         }
