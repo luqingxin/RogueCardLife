@@ -52,7 +52,7 @@ public class CardCreater : MonoBehaviour
     }
 
     //创建卡牌
-    private void CreateSingleCard(int type,int count)
+    public GameObject CreateSingleCard<T>(int type,int count) where T:AbstractCard
     {
         switch (type)
         {
@@ -70,6 +70,6 @@ public class CardCreater : MonoBehaviour
                 break;
         }
         newCard = Instantiate(cardType, new Vector3(0, 0, 0), transform.rotation, transform);
+        return newCard;
     }
-
 }

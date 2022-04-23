@@ -80,7 +80,7 @@ public class GameState : MonoBehaviour
             {
                 //补一张新牌
                 addActionToTop(new DrawCardAction(gameRun));
-                addActionToTop(new AddNothingToDrawPile(gameRun));
+                addActionToTop(new AddNewCard(gameRun,typeof(NothingToDo)));
             }
             //addActionToTop(new )
             return -1;
