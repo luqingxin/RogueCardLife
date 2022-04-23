@@ -20,7 +20,10 @@ public class AbstractRandEvent : MonoBehaviour
     {
     }
 
-    //public void Effect() { }
+    public virtual void Effect(int x)
+    {
+
+    }
 
     public bool CheckColor(int colorNum , int colorNumInNeed)
     {

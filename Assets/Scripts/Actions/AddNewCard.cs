@@ -1,23 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//增加某项颜色点数的动作
-public class AddColorPoint : AbstractGameAction
+using System;
+
+//添加一张新卡到抽牌堆
+public class AddNewCard : AbstractGameAction
 {
-
-    public CardColor cardColor;
-    public int point;
-
-    public AddColorPoint(CardColor c,int x,AbstractGameRun g)
+    Type card;
+    public  AddNewCard(AbstractGameRun g, Type x)
     {
-        cardColor = c;
-        point = x;
         gameRun = g;
+        card = x;
     }
 
     public override void Effect()
     {
-        gameRun.gameState.AddPointOfColor(cardColor, point);
+        CardCreater creater =  gameRun.cardCanvas.GetComponent<CardCreater>();
+        
         isDone = true;
     }
 

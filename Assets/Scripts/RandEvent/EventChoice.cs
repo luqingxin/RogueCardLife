@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //随机事件中某个选项的类的父类
-public class EventChoice
+public class EventChoice : MonoBehaviour
 {
     public string choiceName;
     public string choiceText;

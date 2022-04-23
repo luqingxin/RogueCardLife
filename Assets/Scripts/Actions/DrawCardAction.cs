@@ -6,15 +6,37 @@ using UnityEngine;
  */
 public class DrawCardAction : AbstractGameAction
 {
+    bool drawDone;
+    int cardNum;
 
     public DrawCardAction(AbstractGameRun g)
     {
         gameRun = g;
+        drawDone = false;
     }
 
     public override void Effect()
     {
-        gameRun.gameState.DrawCard();
+        if(drawDone == false)
+        {
+            cardNum = gameRun.gameState.DrawCard();
+            drawDone = true;
+        }
+        if(cardNum != -1)
+        {
+            AbstractCard card;
+            card = gameRun.gameState.getCardOfInt(cardNum);
+            bool a;
+            a = gameRun.cardAnimationController.DrawCard(card.gameObject, CardPositions.positions[cardNum]);
+            if (a == true)
+            {
+                isDone = true;
+            }
+        }
+        else
+        {
+            isDone = true;
+        }
     }
 
     // Start is called before the first frame update

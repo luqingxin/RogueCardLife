@@ -12,6 +12,7 @@ public class AbstractGameRun : MonoBehaviour
     public GameState gameState;
     public PlayerCharacter playerCharacter;
     public CardIndex cardIndex;
+    public CardAnimationController cardAnimationController;
     public Canvas cardCanvas;
 
     // Start is called before the first frame update

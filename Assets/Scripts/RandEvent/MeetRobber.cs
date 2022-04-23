@@ -47,6 +47,18 @@ public class MeetRobber : AbstractRandEvent
         choices[4].GetComponent<EventChoice>().selectable = true;
     }
 
+    public override void Effect(int x)
+    {
+        switch (x)
+        {
+            case 0:VictoryByForce();break;
+            case 1:VictoryBySense(); break;
+            case 2:VictoryByMoney();break;
+            case 3:LoseMoney();break;
+            case 4:Defeat();break;
+        }
+    }
+
     private void VictoryByForce()
     {
         gameRun.playerCharacter.money += 50;

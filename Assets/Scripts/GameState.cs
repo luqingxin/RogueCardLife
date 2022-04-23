@@ -15,6 +15,16 @@ public class GameState : MonoBehaviour
 
     public Dictionary<CardColor, int> pointOfColor;
 
+    public void DisToDraw()//将牌从弃牌堆移动到抽牌堆
+    {
+        while(discardPile.cards.Count != 0)
+        {
+            AbstractCard x = discardPile.DrawCard();
+            drawPile.AddCard(x);
+            //gameRun.cardAnimationController.
+        }
+    }
+
     public void AddPointOfColor(CardColor cl,int x)
     {
         if(cl == CardColor.WHITE)
@@ -22,8 +32,8 @@ public class GameState : MonoBehaviour
             return;
         }
         pointOfColor[cl] += x;
-        Debug.Log(cl);
-        Debug.Log(x);
+        //Debug.Log(cl);
+        //Debug.Log(x);
     }
 
     public void EndRound()
@@ -55,38 +65,45 @@ public class GameState : MonoBehaviour
         return false;
     }
 
-    public bool DrawCard()//抽一张牌
+    public int DrawCard()//抽一张牌
     {
         AbstractCard y = drawPile.DrawCard();//抽取新牌y到第一个空位
         if(y == null)//如果没牌抽了
         {
             if(discardPile.cards.Count != 0)//如果有弃牌就把弃牌堆挪过去
             {
-                addActionToTop(new DiscardPileToDrawPile(gameRun));
                 addActionToTop(new DrawCardAction(gameRun));
+                addActionToTop(new ShuffleDrawPile(gameRun));
+                addActionToTop(new DiscardPileToDrawPile(gameRun));
             }
             else//没有弃牌就添加一张新牌
             {
                 //补一张新牌
                 addActionToTop(new DrawCardAction(gameRun));
+                addActionToTop(new AddNewCard(gameRun,typeof(NothingToDo)));
             }
             //addActionToTop(new )
-            return false;
+            return -1;
         }
-        foreach (CardPair p in cardPairs)
+        for(int i=0;i<cardPairs.Count;i++)
         {
+            CardPair p = cardPairs[i];
             if (p.cardA == null)
             {
                 p.cardA = y;
+                //取消抽牌后的check
+                //CheckPairAndEffect(p);
+                return i * 2;
             }
             if (p.cardB == null)
             {
                 p.cardB = y;
+                //取消check
+                //CheckPairAndEffect(p);
+                return i * 2 + 1;
             }
-            CheckPairAndEffect(p);
-            return true;
         }
-        return false;
+        return -1;
     }
 
     public bool Exhaust(AbstractCard x)
@@ -135,7 +152,7 @@ public class GameState : MonoBehaviour
             addActionToButtom(new DrawCardAction(gameRun));//再抽两张
             /*DiscardCard(p.cardA);//弃掉这两张
             DiscardCard(p.cardB);
-            DrawCard();//再抽两张
+            DrawCard();//再抽两张m  
             DrawCard();*/
             return true;
         }
@@ -204,6 +221,19 @@ public class GameState : MonoBehaviour
     public void addActionToButtom(AbstractGameAction action)
     {
         gameRun.gameActionManager.addActionToBottom(action);
+    }
+
+    //返回第x张牌
+    public AbstractCard getCardOfInt(int x)
+    {
+        if(x%2 == 0)
+        {
+            return cardPairs[x / 2].cardA;
+        }
+        else
+        {
+            return cardPairs[x / 2].cardB;
+        }
     }
 
     // Start is called before the first frame update

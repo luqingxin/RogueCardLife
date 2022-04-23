@@ -50,11 +50,12 @@ public class GameActionManager : MonoBehaviour
                 actionState = ActionState.EXECUTING;
                 currentAction.isStart = true;
                 currentAction.Effect();
+                Debug.Log(currentAction);
             }
         }
         else if(actionState == ActionState.EXECUTING)
         {
-            if (currentAction.isDone == true)
+            if (currentAction.isDone == true && currentAction.duration <= 0)
             {
                 actionState = ActionState.WAITING;
             }
@@ -62,9 +63,9 @@ public class GameActionManager : MonoBehaviour
             {
                 //Debug.Log(currentAction);
                 currentAction.duration -= Time.deltaTime;
-                if(currentAction.duration <= 0)
+                if (currentAction.isDone == false)
                 {
-                    currentAction.isDone = true;
+                    currentAction.Effect();
                 }
             }
         }
