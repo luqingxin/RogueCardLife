@@ -13,7 +13,7 @@ public class CardCreater : MonoBehaviour
 
     //卡牌对
     public GameObject pair;
-    public int cardNum = 8;//手牌上限
+    public int cardNum = 12;//手牌上限
 
     private GameObject cardType;
     private GameObject newCard;
