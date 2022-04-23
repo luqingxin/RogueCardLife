@@ -18,6 +18,20 @@ public class MapManager : MonoBehaviour
 
     private int[,] setBlocks;
 
+
+    //获取xy位置的格子
+    public MapBlock GetMapBlockAt(int x,int y)
+    {
+        for(int i = 0; i < blocks.Count; i++)
+        {
+            if(blocks[i].x == x && blocks[i].y == y)
+            {
+                return blocks[i];
+            }
+        }
+        return null;
+    }
+
     void Start()
     {
         setBlocks = new int[,]

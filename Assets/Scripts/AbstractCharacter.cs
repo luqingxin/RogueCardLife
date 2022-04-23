@@ -18,6 +18,12 @@ public abstract class AbstractCharacter : MonoBehaviour
     public int mapY;
 
 
+    public void moveToBlockAt(int x,int y)
+    {
+        //if()
+    }
+
+
     public void GainStrength(int x)// 获取x点内功
     {
         strength += x;
