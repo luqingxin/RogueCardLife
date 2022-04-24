@@ -20,6 +20,7 @@ public class SelectionUIController : MonoBehaviour
         isSelected = false;
         //从物体上获取随机事件
         randEvent = transform.GetComponent<AbstractRandEvent>();
+
         for(int i = 0; i < randEvent.choiceNum; i++)
         {
             choice = Instantiate(pre_Choice,transform);
