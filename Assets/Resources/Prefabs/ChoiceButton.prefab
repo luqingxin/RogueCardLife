@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5537770708783366697}
   - component: {fileID: 5537770708783366696}
   - component: {fileID: 5537770708783366699}
+  - component: {fileID: 4377678579485734146}
   m_Layer: 5
   m_Name: ChoiceButton
   m_TagString: Untagged
@@ -120,7 +121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5537770708783366697}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5537770708783366699}
+        m_TargetAssemblyTypeName: SelectionButton, Assembly-CSharp
+        m_MethodName: Onclick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5537770708783366699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +147,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selection_num: 0
+  controller: {fileID: 0}
+--- !u!114 &4377678579485734146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5537770708783366694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca09f3def1ae7404594500edbb00c13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choiceName: 
+  choiceText: 
+  choiceResultText: 
+  selectable: 0
 --- !u!1 &5537770709978554506
 GameObject:
   m_ObjectHideFlags: 0
