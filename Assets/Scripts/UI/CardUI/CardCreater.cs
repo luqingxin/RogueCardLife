@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 //生成卡牌
 public class CardCreater : MonoBehaviour
@@ -54,11 +55,11 @@ public class CardCreater : MonoBehaviour
     }
 
     //创建卡牌
-    public AbstractCard CreateSingleCard<T>() where T:AbstractCard
+    public AbstractCard CreateSingleCard(Type t)
     {
         cardType = prefab_red;
         newCard = Instantiate(cardType, new Vector3(0, 0, 0), transform.rotation, transform);
-        newCard.AddComponent<T>();
+        newCard.AddComponent(t);
         AbstractCard x = newCard.GetComponent<AbstractCard>();
         Image image = newCard.GetComponent<Image>();
         //卡牌生成后，再确定脚本中指定的颜色

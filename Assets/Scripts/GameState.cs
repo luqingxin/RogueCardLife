@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine; 
+using UnityEngine;
+using System;
 /*
  * 游戏的局内状态，保存了抽牌堆弃牌堆手牌
  */
@@ -80,7 +81,8 @@ public class GameState : MonoBehaviour
             {
                 //补一张新牌
                 addActionToTop(new DrawCardAction(gameRun));
-                addActionToTop(new AddNewCard<NothingToDo>(gameRun));
+                Type t = gameRun.cardIndex.getCardAt(13);
+                addActionToTop(new AddNewCard(gameRun,t));
             }
             //addActionToTop(new )
             return -1;

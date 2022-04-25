@@ -4,17 +4,20 @@ using UnityEngine;
 using System;
 
 //添加一张新卡到抽牌堆
-public class AddNewCard<T> : AbstractGameAction where T:AbstractCard
+public class AddNewCard : AbstractGameAction
 {
-    public  AddNewCard (AbstractGameRun g)
+
+    Type cardType;
+    public  AddNewCard (AbstractGameRun g,Type t)
     {
         gameRun = g;
+        cardType = t;
     }
 
     public override void Effect()
     {
         CardCreater creater =  gameRun.cardCanvas.GetComponent<CardCreater>();
-        AbstractCard x =  creater.CreateSingleCard<T>();
+        AbstractCard x =  creater.CreateSingleCard(cardType);
         x.gameRun = gameRun;
         x.gameObject.transform.SetParent(gameRun.cardCanvas.transform);
         isDone = true;
