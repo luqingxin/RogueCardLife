@@ -81,7 +81,7 @@ public class GameState : MonoBehaviour
             {
                 //补一张新牌
                 addActionToTop(new DrawCardAction(gameRun));
-                Type t = gameRun.cardIndex.getCardAt(13);
+                Type t = gameRun.cardIndex.getCardAt(13);//无为
                 addActionToTop(new AddNewCard(gameRun,t));
             }
             //addActionToTop(new )
