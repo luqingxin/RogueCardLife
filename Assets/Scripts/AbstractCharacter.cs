@@ -21,6 +21,9 @@ public abstract class AbstractCharacter : MonoBehaviour
     public void moveToBlockAt(int x,int y)
     {
         //if()
+        mapX = x;
+        mapY = y;
+        this.transform.position = gameRun.mapManager.getFloatPosition(new Vector3Int( mapX, mapY,0));
     }
 
 

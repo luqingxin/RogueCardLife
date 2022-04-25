@@ -9,6 +9,7 @@ public class MapBlock : MonoBehaviour
     public int y;
     public GameObject block_frame;
     private bool selected = false;
+    public AbstractGameRun gameRun;
 
     public void setRecord()
     {
@@ -27,5 +28,10 @@ public class MapBlock : MonoBehaviour
     {
         if(!selected)
             block_frame.SetActive(false);
+    }
+
+    private void OnMouseUpAsButton()
+    {
+        gameRun.playerCharacter.moveToBlockAt(x, y);
     }
 }

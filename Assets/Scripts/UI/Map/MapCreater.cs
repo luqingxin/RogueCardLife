@@ -6,8 +6,8 @@ public class MapCreater : MonoBehaviour
 {
     public float distance = 1.3f;//方块间距
 
-    private int maxX;
-    private int maxY;
+    public int maxX;
+    public int maxY;
     private float block_x;
     private float block_y;
 
@@ -23,6 +23,7 @@ public class MapCreater : MonoBehaviour
     public GameObject block_camp;
     public GameObject block_battlefield;
     private List<GameObject> block_prefab_list;
+    public AbstractGameRun gameRun;
 
     private void Start()
     {
@@ -64,7 +65,7 @@ public class MapCreater : MonoBehaviour
         ini_block_obj = block_prefab_list[type];
         ini_block_obj = Instantiate(ini_block_obj);
         ini_block = ini_block_obj.GetComponent<MapBlock>();
-
+        ini_block.gameRun = gameRun;
         if (type >= 0)//该方块不为空
         {
             ini_block.x = j;
