@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //生成卡牌
 public class CardCreater : MonoBehaviour
@@ -10,6 +11,7 @@ public class CardCreater : MonoBehaviour
     public GameObject prefab_green;
     public GameObject prefab_blue;
     public GameObject prefab_yellow;
+    public GameObject prefab_white;
 
     //卡牌对
     public GameObject pair;
@@ -52,24 +54,32 @@ public class CardCreater : MonoBehaviour
     }
 
     //创建卡牌
-    public GameObject CreateSingleCard<T>(int type,int count) where T:AbstractCard
+    public AbstractCard CreateSingleCard<T>() where T:AbstractCard
     {
-        switch (type)
+        cardType = prefab_red;
+        newCard = Instantiate(cardType, new Vector3(0, 0, 0), transform.rotation, transform);
+        newCard.AddComponent<T>();
+        AbstractCard x = newCard.GetComponent<AbstractCard>();
+        Image image = newCard.GetComponent<Image>();
+        //卡牌生成后，再确定脚本中指定的颜色
+        switch (x.cardColors[0])
         {
-            case 0:
-                cardType = prefab_red;
+            case CardColor.BLUE:
+                image.sprite = prefab_blue.GetComponent<Image>().sprite;
                 break;
-            case 1:
-                cardType = prefab_yellow;
+            case CardColor.GREEN:
+                image.sprite = prefab_green.GetComponent<Image>().sprite;
                 break;
-            case 2:
-                cardType = prefab_blue;
+            case CardColor.RED:
+                image.sprite = prefab_red.GetComponent<Image>().sprite;
                 break;
-            case 3:
-                cardType = prefab_green;
+            case CardColor.WHITE:
+                image.sprite = prefab_white.GetComponent<Image>().sprite;
+                break;
+            case CardColor.YELLOW:
+                image.sprite = prefab_yellow.GetComponent<Image>().sprite;
                 break;
         }
-        newCard = Instantiate(cardType, new Vector3(0, 0, 0), transform.rotation, transform);
-        return newCard;
+        return newCard.GetComponent<AbstractCard>();
     }
 }
