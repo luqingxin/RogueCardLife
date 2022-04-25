@@ -7,7 +7,7 @@ public class SelectionUIController : MonoBehaviour
     public int selected_Num = 0;
     public bool isSelected = false;//是否已经选择事件选项
 
-    public int choice_Dis = 50;
+    private int choice_Dis = -Screen.height/10;
     public AbstractRandEvent randEvent;
     public GameObject pre_Choice;//预制体
     private GameObject choice;

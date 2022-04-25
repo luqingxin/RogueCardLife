@@ -905,7 +905,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected_Num: 0
   isSelected: 0
-  choice_Dis: -60
   randEvent: {fileID: 0}
   pre_Choice: {fileID: 5537770708783366694, guid: 55964a44bcaccf74c85b3ba42dd3261d,
     type: 3}
@@ -3588,6 +3587,7 @@ GameObject:
   - component: {fileID: 1673727446}
   - component: {fileID: 1673727445}
   - component: {fileID: 1673727444}
+  - component: {fileID: 1673727448}
   m_Layer: 5
   m_Name: EventCanvas
   m_TagString: Untagged
@@ -3675,6 +3675,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1673727448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673727443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d61db9c18e63443b60a38e09a55494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts: []
+  text: {fileID: 0}
+  maxRow: 12
 --- !u!1 &1691641749
 GameObject:
   m_ObjectHideFlags: 0
