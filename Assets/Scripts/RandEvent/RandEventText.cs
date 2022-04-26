@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [System.Serializable]
 public class RandEventText : ScriptableObject
@@ -10,6 +11,7 @@ public class RandEventText : ScriptableObject
     public string _description;
     public List<int> _geos;
     public int _choice_num;
+    public Type randEventType;
 
     public List<string> _choices;
     public List<string> _choices_result;//结果的奖励缩略显示

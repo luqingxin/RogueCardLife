@@ -49,16 +49,17 @@ public class RandEventIndex : MonoBehaviour
 
             row = sheet.GetRow(j);
             {
-                text._name = row.GetCell(1).ToString();
-                text._description = row.GetCell(2).ToString();
-                LoadInt(row.GetCell(3).ToString(),text._geos);//读取地图类型
+                //text.randEventType = Resources.L;
+                text._name = row.GetCell(2).ToString();
+                text._description = row.GetCell(3).ToString();
+                LoadInt(row.GetCell(4).ToString(),text._geos);//读取地图类型
                 text._choice_num = int.Parse(row.GetCell(5).ToString());
 
                 for(int k = 0; k < text._choice_num; k++)
                 {
-                    text._choices.Add(row.GetCell(6+4*k).ToString());
-                    text._choices_result.Add(row.GetCell(8+4*k).ToString());
-                    text._choices_result_text.Add(row.GetCell(9+4*k).ToString());
+                    text._choices.Add(row.GetCell(7+4*k).ToString());
+                    text._choices_result.Add(row.GetCell(9+4*k).ToString());
+                    text._choices_result_text.Add(row.GetCell(10+4*k).ToString());
                 }
                 texts.Add(text);
             }
