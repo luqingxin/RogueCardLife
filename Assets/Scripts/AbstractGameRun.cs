@@ -15,6 +15,8 @@ public class AbstractGameRun : MonoBehaviour
     public CardAnimationController cardAnimationController;
     public Canvas cardCanvas;
     public MapManager mapManager;
+    public GameObject EventFrame;
+    public RandEventManager randEventManager;
 
     // Start is called before the first frame update
     void Start()

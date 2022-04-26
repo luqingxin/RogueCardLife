@@ -11,7 +11,7 @@ public class RandEventText : ScriptableObject
     public string _description;
     public List<int> _geos;
     public int _choice_num;
-    public UnityEngine.Object randEventType;
+    public Type randEventType;
 
     public List<string> _choices;
     public List<string> _choices_result;//结果的奖励缩略显示
