@@ -49,7 +49,7 @@ public class RandEventIndex : MonoBehaviour
 
             row = sheet.GetRow(j);
             {
-                //text.randEventType = Resources.L;
+                text.randEventType = Resources.Load(row.GetCell(1).ToString());
                 text._name = row.GetCell(2).ToString();
                 text._description = row.GetCell(3).ToString();
                 LoadInt(row.GetCell(4).ToString(),text._geos);//读取地图类型
