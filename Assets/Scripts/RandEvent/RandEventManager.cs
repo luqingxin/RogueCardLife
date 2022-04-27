@@ -9,15 +9,27 @@ public class RandEventManager : MonoBehaviour
 {
     public AbstractGameRun gameRun;
     public RandEventIndex randEventIndex;
+
+    public AbstractRandEvent GetCurrentEvent()
+    {
+        return gameRun.EventFrame.GetComponent<AbstractRandEvent>();
+    }
+
+    //删除当前事件框上附带的事件
     public void DeleteCurrentEvent()
     {
         Destroy(gameRun.EventFrame.GetComponent<AbstractRandEvent>());
     }
 
+
+    //将事件x放到事件框上
     public void CreateEvent(Type x)
     {
         Debug.Log(x);
-        gameRun.EventFrame.AddComponent(x);
+        if (x.IsSubclassOf(typeof(AbstractRandEvent))){
+            gameRun.EventFrame.AddComponent(x);
+            gameRun.EventFrame.GetComponent<AbstractRandEvent>().gameRun = gameRun;
+        }
     }
 
     public RandEventText GetRandEventText()
