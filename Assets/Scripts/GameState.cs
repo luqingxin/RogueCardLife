@@ -30,7 +30,7 @@ public class GameState : MonoBehaviour
             cardPairs[i].cardA = null;
             cardPairs[i].cardB = null;
         }
-
+        
     }
 
     public void DisToDraw()//将牌从弃牌堆移动到抽牌堆
