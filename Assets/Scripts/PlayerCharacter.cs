@@ -10,6 +10,7 @@ public class PlayerCharacter : AbstractCharacter
     public CardPile playerCardPile;
     public int energy;//精力
     public int endurance;//耐力值
+    private bool isInitialCardPileDone;
 
     //初始化玩家人物
     public void PlayerCharacterInitialize()
@@ -26,12 +27,27 @@ public class PlayerCharacter : AbstractCharacter
     // Start is called before the first frame update
     void Start()
     {
-        
+        isInitialCardPileDone = false;
+    }
+
+    public void AddCardToPlayerCardPile(int x)
+    {
+        CardCreater cardCreater = gameRun.cardCanvas.GetComponent<CardCreater>();
+        AbstractCard c;
+        c = cardCreater.CreateSingleCard(gameRun.cardIndex.getCardAt(x));
+        playerCardPile.AddCard(c);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(isInitialCardPileDone == false)
+        {
+            for(int i = 0; i < 13; i++)
+            {
+                AddCardToPlayerCardPile(i);
+            }
+            isInitialCardPileDone = true;
+        }
     }
 }

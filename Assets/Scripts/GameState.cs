@@ -16,6 +16,23 @@ public class GameState : MonoBehaviour
 
     public Dictionary<CardColor, int> pointOfColor;
 
+    public void InitializeBattle()
+    {
+        if(cardPairs.Count == 0)
+        {
+            for(int i = 0; i < 6; i++)
+            {
+                cardPairs.Add(new CardPair());
+            }
+        }
+        for(int i = 0; i < 6; i++)
+        {
+            cardPairs[i].cardA = null;
+            cardPairs[i].cardB = null;
+        }
+
+    }
+
     public void DisToDraw()//将牌从弃牌堆移动到抽牌堆
     {
         while(discardPile.cards.Count != 0)

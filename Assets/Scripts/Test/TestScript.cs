@@ -42,9 +42,9 @@ public class TestScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameRun.gameState.cardPairs.Count == 0)
-        {
-            test2();
-        }
+        //if(gameRun.gameState.cardPairs.Count == 0)
+        //{
+        //    test2();
+        //}
     }
 }
