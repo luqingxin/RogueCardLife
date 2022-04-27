@@ -47,8 +47,8 @@ public class MapManager : MonoBehaviour
             block_y = (position.y - creater.maxY / 2) * creater.distance + 0.5f * creater.distance;
         else
             block_y = (position.y - creater.maxY / 2) * creater.distance;
-        Debug.Log(block_x);
-        Debug.Log(position);
+        //Debug.Log(block_x);
+        //Debug.Log(position);
         return new Vector3(block_x, block_y,0);
     }
 

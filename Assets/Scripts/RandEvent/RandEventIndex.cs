@@ -31,6 +31,7 @@ public class RandEventIndex : MonoBehaviour
     void Start()
     {
         LoadExcel();
+        this.gameObject.SetActive(false);
     }
 
     private void LoadExcel()

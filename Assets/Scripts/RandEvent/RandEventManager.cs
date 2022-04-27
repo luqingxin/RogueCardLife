@@ -16,6 +16,7 @@ public class RandEventManager : MonoBehaviour
 
     public void CreateEvent(Type x)
     {
+        Debug.Log(x);
         gameRun.EventFrame.AddComponent(x);
     }
 
@@ -28,7 +29,8 @@ public class RandEventManager : MonoBehaviour
     
     public RandEventText GetEventText(int x)
     {
-        return randEventIndex.texts[x];
+        //return randEventIndex.texts[x];
+        return randEventIndex.texts[2];
     }
 
     // Start is called before the first frame update
