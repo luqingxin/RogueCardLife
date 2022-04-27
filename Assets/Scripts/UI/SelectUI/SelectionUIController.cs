@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelectionUIController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class SelectionUIController : MonoBehaviour
     public AbstractRandEvent randEvent;
     public GameObject pre_Choice;//预制体
     private GameObject choice;
+    private EventLoad _load;
 
     public GameObject choice_Pos;//记录选项UI的位置
 
@@ -21,12 +23,18 @@ public class SelectionUIController : MonoBehaviour
         //从物体上获取随机事件
         randEvent = transform.GetComponent<AbstractRandEvent>();
 
-        for(int i = 0; i < randEvent.choiceNum; i++)
+        EventLoad.loading_event = 2;
+        _load.LoadEvent();
+
+        for (int i = 0; i < randEvent.choiceNum; i++)
         {
             choice = Instantiate(pre_Choice,transform);
             SetPosition(choice, i);
             randEvent.choices.Add(choice);
             //文本索引
+            //choice.transform.GetChild(0).GetComponent<Text>().text
+            _load.LoadChoiceText(choice.transform.GetChild(0).GetComponent<Text>(), i);
+
             choice.GetComponent<SelectionButton>().controller = this;
             choice.GetComponent<SelectionButton>().selection_num = i;
         }
@@ -41,7 +49,9 @@ public class SelectionUIController : MonoBehaviour
 
     private void Start()
     {
+        _load = GetComponent<EventLoad>();
         IniRandEvent();
+
     }
 
     private void Update()
