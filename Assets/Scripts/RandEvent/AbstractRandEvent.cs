@@ -25,6 +25,15 @@ public class AbstractRandEvent : MonoBehaviour
 
     }
 
+    public void addActionToTop(AbstractGameAction action)
+    {
+        gameRun.gameActionManager.addActionToTop(action);
+    }
+    public void addActionToButtom(AbstractGameAction action)
+    {
+        gameRun.gameActionManager.addActionToBottom(action);
+    }
+
     public bool CheckColor(int colorNum , int colorNumInNeed)
     {
         if (colorNum>=colorNumInNeed)

@@ -12,16 +12,6 @@ public class MeetRobber : AbstractRandEvent
         choices = new List<GameObject>();
     }
 
-
-    public void addActionToTop(AbstractGameAction action)
-    {
-        gameRun.gameActionManager.addActionToTop(action);
-    }
-    public void addActionToButtom(AbstractGameAction action)
-    {
-        gameRun.gameActionManager.addActionToBottom(action);
-    }
-
     public override void Check()
     {
         if (CheckColor(gameRun.gameState.pointOfColor[CardColor.RED], 8)&& CheckColor(gameRun.gameState.pointOfColor[CardColor.YELLOW], 8))
