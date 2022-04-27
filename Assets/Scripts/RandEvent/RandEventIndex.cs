@@ -53,7 +53,7 @@ public class RandEventIndex : MonoBehaviour
                 text._name = row.GetCell(2).ToString();
                 text._description = row.GetCell(3).ToString();
                 LoadInt(row.GetCell(4).ToString(),text._geos);//读取地图类型
-                text._choice_num = int.Parse(row.GetCell(5).ToString());
+                text._choice_num = int.Parse(row.GetCell(6).ToString());
 
                 for(int k = 0; k < text._choice_num; k++)
                 {
