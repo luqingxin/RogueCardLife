@@ -21,6 +21,7 @@ public class CardIndex : MonoBehaviour
     {
         //将卡牌的类加入索引
         cardTypes = new List<Type>();
+        cardColors = new List<CardColor>();
         
         cardTypes.Add(typeof(AdjustBreathing));
         cardColors.Add(CardColor.RED);

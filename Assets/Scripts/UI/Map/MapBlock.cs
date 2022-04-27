@@ -33,5 +33,9 @@ public class MapBlock : MonoBehaviour
     private void OnMouseUpAsButton()
     {
         gameRun.playerCharacter.moveToBlockAt(x, y);
+        RandEventText randEventText =  gameRun.randEventManager.GetRandEventText();
+        gameRun.randEventManager.DeleteCurrentEvent();
+        gameRun.randEventManager.CreateEvent(randEventText.randEventType);
+        gameRun.EventCanvas.SetActive(true);
     }
 }

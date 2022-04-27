@@ -1306,7 +1306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &472869239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1889,6 +1889,7 @@ MonoBehaviour:
   mapManager: {fileID: 1799993614}
   EventFrame: {fileID: 1167681070}
   randEventManager: {fileID: 1240596152}
+  EventCanvas: {fileID: 472869238}
 --- !u!4 &844019056
 Transform:
   m_ObjectHideFlags: 0
@@ -2626,6 +2627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameRun: {fileID: 844019055}
+  randEventIndex: {fileID: 472869243}
 --- !u!4 &1240596153
 Transform:
   m_ObjectHideFlags: 0

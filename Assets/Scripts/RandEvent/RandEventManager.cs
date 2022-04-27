@@ -8,6 +8,7 @@ using System;
 public class RandEventManager : MonoBehaviour
 {
     public AbstractGameRun gameRun;
+    public RandEventIndex randEventIndex;
     public void DeleteCurrentEvent()
     {
         Destroy(gameRun.EventFrame.GetComponent<AbstractRandEvent>());
@@ -18,9 +19,16 @@ public class RandEventManager : MonoBehaviour
         gameRun.EventFrame.AddComponent(x);
     }
 
-    public RandEventText GetRandEventText(int x)
+    public RandEventText GetRandEventText()
     {
-        return null;
+        System.Random random = new System.Random();
+        int x = random.Next(0, randEventIndex.maxRow - 1);
+        return GetEventText(x);
+    }
+    
+    public RandEventText GetEventText(int x)
+    {
+        return randEventIndex.texts[x];
     }
 
     // Start is called before the first frame update

@@ -17,6 +17,7 @@ public class AbstractGameRun : MonoBehaviour
     public MapManager mapManager;
     public GameObject EventFrame;
     public RandEventManager randEventManager;
+    public GameObject EventCanvas;
 
     // Start is called before the first frame update
     void Start()
