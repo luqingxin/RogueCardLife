@@ -26,12 +26,13 @@ public class RandEventIndex : MonoBehaviour
         filePath = Application.dataPath + "/Data/";
         fileName = "事件.xls";
         texts = new List<RandEventText>();
+        LoadExcel();
+        //this.gameObject.SetActive(false);
     }
 
     void Start()
     {
-        LoadExcel();
-        this.gameObject.SetActive(false);
+
     }
 
     private void LoadExcel()
