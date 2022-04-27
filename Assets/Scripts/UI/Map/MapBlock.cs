@@ -36,6 +36,5 @@ public class MapBlock : MonoBehaviour
         RandEventText randEventText =  gameRun.randEventManager.GetRandEventText();
         gameRun.randEventManager.DeleteCurrentEvent();
         gameRun.randEventManager.CreateEvent(randEventText.randEventType);
-        gameRun.EventCanvas.SetActive(true);
     }
 }
