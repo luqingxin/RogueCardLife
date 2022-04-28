@@ -36,7 +36,6 @@ public class PlayerCharacter : AbstractCharacter
         AbstractCard c;
         c = cardCreater.CreateSingleCard(gameRun.cardIndex.getCardAt(x));
         playerCardPile.AddCard(c);
-        Debug.Log(x);
     }
 
     // Update is called once per frame
@@ -44,7 +43,7 @@ public class PlayerCharacter : AbstractCharacter
     {
         if(isInitialCardPileDone == false)
         {
-            for(int i = 0; i < 6; i++)
+            for(int i = 0; i < 12; i++)
             {
                 AddCardToPlayerCardPile(i);
             }

@@ -1567,7 +1567,7 @@ MonoBehaviour:
     type: 3}
   gameRun: {fileID: 844019055}
   pair: {fileID: 0}
-  cardNum: 8
+  cardNum: 12
 --- !u!114 &491067758
 MonoBehaviour:
   m_ObjectHideFlags: 0
