@@ -76,13 +76,14 @@ public class GameState : MonoBehaviour
             {
                 p.cardA = null;
                 discardPile.AddCard(x);
+                return true;
             }
             if (p.cardB == x)
             {
                 p.cardB = null;
                 discardPile.AddCard(x);
+                return true;
             }
-            return true;
         }
         return false;
     }
@@ -136,12 +137,15 @@ public class GameState : MonoBehaviour
             if (p.cardA == x)
             {
                 p.cardA = null;
+                Destroy(x.gameObject);
+                return true;
             }
             if (p.cardB == x)
             {
                 p.cardB = null;
+                Destroy(x.gameObject);
+                return true;
             }
-            return true;
         }
         return false;
     }
@@ -217,7 +221,14 @@ public class GameState : MonoBehaviour
                 //还没写的，移动x到牌对p的B位置
                 p.cardB = x;
             }
-            CheckPairAndEffect(p);
+        }
+        foreach (CardPair p in cardPairs)
+        {
+            //遍历每一对，如果某一对交换过，则检查之
+            if(p.cardA == x||p.cardB == x||p.cardA == y||p.cardB == y)
+            {
+                CheckPairAndEffect(p);
+            }
         }
         return true;
     }

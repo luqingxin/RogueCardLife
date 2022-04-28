@@ -33,6 +33,7 @@ public class MapBlock : MonoBehaviour
     //点击地图后，选生成一个随机事件，然后初始化战斗
     private void OnMouseUpAsButton()
     {
+        Debug.Log("hhh");
         gameRun.playerCharacter.moveToBlockAt(x, y);
         RandEventText randEventText =  gameRun.randEventManager.GetRandEventText();
         gameRun.randEventManager.DeleteCurrentEvent();
