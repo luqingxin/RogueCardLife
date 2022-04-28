@@ -30,11 +30,13 @@ public class MapBlock : MonoBehaviour
             block_frame.SetActive(false);
     }
 
+    //点击地图后，选生成一个随机事件，然后初始化战斗
     private void OnMouseUpAsButton()
     {
         gameRun.playerCharacter.moveToBlockAt(x, y);
         RandEventText randEventText =  gameRun.randEventManager.GetRandEventText();
         gameRun.randEventManager.DeleteCurrentEvent();
         gameRun.randEventManager.CreateEvent(randEventText.randEventType);
+        gameRun.gameState.InitializeBattle();
     }
 }

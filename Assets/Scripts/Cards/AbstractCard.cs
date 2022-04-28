@@ -17,7 +17,6 @@ public enum CardType
 
 public abstract class AbstractCard : MonoBehaviour
 {
-    public static CardColor defaultColor;
     public List<CardColor> cardColors;//颜色集合
     public CardType cardType;//类型
     public AbstractNonPlayerCharacter cardSource;//卡牌来自哪个NPC

@@ -22,6 +22,7 @@ public class SilkBag : AbstractCard
         this.cardColors.Add(CardColor.BLUE);
         this.isExhaust = true;
         this.cardDescription = "锦囊";
+        gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
     }
 
     // Update is called once per frame

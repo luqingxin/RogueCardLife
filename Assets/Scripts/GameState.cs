@@ -30,7 +30,11 @@ public class GameState : MonoBehaviour
             cardPairs[i].cardA = null;
             cardPairs[i].cardB = null;
         }
-        
+        addActionToTop(new PlayerPileToDraw(gameRun));
+        for(int i = 0; i < 12; i++)
+        {
+            addActionToButtom(new DrawCardAction(gameRun));
+        }
     }
 
     public void DisToDraw()//将牌从弃牌堆移动到抽牌堆

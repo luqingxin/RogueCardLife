@@ -20,6 +20,7 @@ public class LongFist : AbstractCard
         this.pointNums.Add(2);
         this.cardColors.Add(CardColor.YELLOW);
         this.cardDescription = "长拳";
+        gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
     }
 
     // Update is called once per frame

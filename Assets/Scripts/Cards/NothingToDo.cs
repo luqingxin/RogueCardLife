@@ -19,6 +19,7 @@ public class NothingToDo : AbstractCard
         this.pointNums.Add(1);
         this.cardColors.Add(CardColor.WHITE);
         this.cardDescription = "无为";
+        gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
     }
 
     // Update is called once per frame

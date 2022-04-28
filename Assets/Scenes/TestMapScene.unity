@@ -1565,6 +1565,7 @@ MonoBehaviour:
     type: 3}
   prefab_white: {fileID: 5297840383890925497, guid: 018a1a0b1f090a143ad349d9265f7406,
     type: 3}
+  gameRun: {fileID: 844019055}
   pair: {fileID: 0}
   cardNum: 8
 --- !u!114 &491067758

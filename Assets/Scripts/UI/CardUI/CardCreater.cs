@@ -13,6 +13,7 @@ public class CardCreater : MonoBehaviour
     public GameObject prefab_blue;
     public GameObject prefab_yellow;
     public GameObject prefab_white;
+    public AbstractGameRun gameRun;
 
     //卡牌对
     public GameObject pair;
@@ -54,15 +55,9 @@ public class CardCreater : MonoBehaviour
 
     }
 
-    //创建卡牌
-    public AbstractCard CreateSingleCard(Type t)
+    public void fixCardColor(AbstractCard x)
     {
-        cardType = prefab_red;
-        newCard = Instantiate(cardType, new Vector3(0, 0, 0), transform.rotation, transform);
-        newCard.AddComponent(t);
-        AbstractCard x = newCard.GetComponent<AbstractCard>();
-        Image image = newCard.GetComponent<Image>();
-        //卡牌生成后，再确定脚本中指定的颜色
+        Image image = x.gameObject.GetComponent<Image>();
         switch (x.cardColors[0])
         {
             case CardColor.BLUE:
@@ -81,6 +76,19 @@ public class CardCreater : MonoBehaviour
                 image.sprite = prefab_yellow.GetComponent<Image>().sprite;
                 break;
         }
+    }
+
+    //创建卡牌
+    public AbstractCard CreateSingleCard(Type t)
+    {
+        cardType = prefab_red;
+        newCard = Instantiate(cardType, new Vector3(0, 0, 0), transform.rotation, transform);
+        Destroy(newCard.GetComponent<AbstractCard>());
+        newCard.AddComponent(t);
+        AbstractCard x = newCard.GetComponent<AbstractCard>();
+        Image image = newCard.GetComponent<Image>();
+        x.gameRun = gameRun;
+        //卡牌生成后，再确定脚本中指定的颜色
         return newCard.GetComponent<AbstractCard>();
     }
 }

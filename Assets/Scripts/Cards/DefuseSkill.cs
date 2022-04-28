@@ -20,6 +20,7 @@ public class DefuseSkill : AbstractCard
         this.pointNums.Add(1);
         this.cardColors.Add(CardColor.YELLOW);
         this.cardDescription = "拆招";
+        gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
     }
 
     // Update is called once per frame
