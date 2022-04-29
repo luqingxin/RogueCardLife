@@ -47,9 +47,12 @@ public class MapManager : MonoBehaviour
             block_y = (position.y - creater.maxY / 2) * creater.distance + 0.5f * creater.distance;
         else
             block_y = (position.y - creater.maxY / 2) * creater.distance;
+
+        block_x += transform.position.x;
+        block_y += transform.position.y;
         //Debug.Log(block_x);
         //Debug.Log(position);
-        return new Vector3(block_x, block_y,0);
+        return new Vector3(block_x, block_y,-1);
     }
 
     //获取xy位置的格子
@@ -69,9 +72,9 @@ public class MapManager : MonoBehaviour
     {
         setBlocks = new int[,]
         {
-            {-1,0,0,0,1},
-            {0,0,2,0,0},
-            {2,0,1,1,-1},
+            {0,0,0,0,1,1},
+            {0,0,2,0,0,1},
+            {2,0,1,1,0,1},
         };
         creater.gameRun = gameRun;
         gameRun.playerCharacter.transform.SetParent(transform);

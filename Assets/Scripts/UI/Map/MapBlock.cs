@@ -19,19 +19,19 @@ public class MapBlock : MonoBehaviour
         MapManager.targetY = y;
     }
 
-    private void OnMouseEnter()
+    public void MouseEnter()
     {
         block_frame.SetActive(true);
     }
     
-    private void OnMouseExit()
+    public void MouseExit()
     {
         if(!selected)
             block_frame.SetActive(false);
     }
 
     //点击地图后，选生成一个随机事件，然后初始化战斗
-    private void OnMouseUpAsButton()
+    public void OnMouseUpAsButton()
     {
         Debug.Log("hhh");
         gameRun.playerCharacter.moveToBlockAt(x, y);
