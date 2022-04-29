@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MapCreater : MonoBehaviour
 {
-    public float distance = 1.3f;//方块间距
+    public float distance = 100f;//方块间距
 
     public int maxX;
     public int maxY;
@@ -25,7 +25,7 @@ public class MapCreater : MonoBehaviour
     private List<GameObject> block_prefab_list;
     public AbstractGameRun gameRun;
 
-    private void Start()
+    private void Awake()
     {
         block_prefab_list = new List<GameObject>();
         block_prefab_list.Add(block_road);
@@ -61,7 +61,6 @@ public class MapCreater : MonoBehaviour
     //初始化方块
     private void InstantiateMapBlock(int i, int j, int type)
     {
-        //Debug.Log(block_prefab_list[type]);
         ini_block_obj = block_prefab_list[type];
         ini_block_obj = Instantiate(ini_block_obj);
         ini_block = ini_block_obj.GetComponent<MapBlock>();
@@ -79,14 +78,14 @@ public class MapCreater : MonoBehaviour
     private void PositionCalculate(MapBlock block)
     {
         if (maxX % 2 == 0)
-            block_x = (block.x - maxX / 2) * distance + 0.5f * distance;
+            block_x = (block.x - maxX / 2) * distance + 0.5f * distance + transform.position.x;
         else
-            block_x = (block.x - maxX / 2) * distance;
+            block_x = (block.x - maxX / 2) * distance + transform.position.x;
 
         if (maxY % 2 == 0)
-            block_y = (block.y - maxY / 2) * distance + 0.5f * distance;
+            block_y = (block.y - maxY / 2) * distance + 0.5f * distance + transform.position.y;
         else
-            block_y = (block.y - maxY / 2) * distance;
+            block_y = (block.y - maxY / 2) * distance + transform.position.y;
 
         block.transform.position = new Vector3(block_x, block_y, 0);
     }

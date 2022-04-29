@@ -16,6 +16,7 @@ public class ExhaustCardAction : AbstractGameAction
     public override void Effect()
     {
         gameRun.gameState.Exhaust(card);
+        isDone = true;
     }
 
     // Start is called before the first frame update

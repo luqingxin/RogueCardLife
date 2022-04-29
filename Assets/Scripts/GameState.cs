@@ -132,8 +132,9 @@ public class GameState : MonoBehaviour
 
     public bool Exhaust(AbstractCard x)
     {
-        foreach (CardPair p in cardPairs)
+        for(int i = 0; i < cardPairs.Count; i++)
         {
+            CardPair p = cardPairs[i];
             if (p.cardA == x)
             {
                 p.cardA = null;

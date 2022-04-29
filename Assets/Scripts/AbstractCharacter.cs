@@ -24,6 +24,7 @@ public abstract class AbstractCharacter : MonoBehaviour
         mapX = x;
         mapY = y;
         this.transform.position = gameRun.mapManager.getFloatPosition(new Vector3Int( mapX, mapY,0));
+        transform.SetAsLastSibling();
     }
 
 

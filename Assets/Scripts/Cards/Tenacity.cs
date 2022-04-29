@@ -10,7 +10,7 @@ public class Tenacity : AbstractCard
 
     public override void Effect()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     // Start is called before the first frame update

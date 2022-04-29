@@ -64,7 +64,7 @@ public abstract class AbstractCard : MonoBehaviour
                     if (y == CardColor.WHITE) return true;
                 }
             }
-            if (CardA.cardSource == CardB.cardSource)
+            if (CardA.cardSource == CardB.cardSource && CardA.cardSource != null)
             {
                 return true;
             }

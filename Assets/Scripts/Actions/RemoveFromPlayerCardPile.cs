@@ -20,10 +20,13 @@ public class RemoveFromPlayerCardPile : AbstractGameAction
         {
             if(cards[i].cardNum == cardToRemove.cardNum)
             {
+                AbstractCard c = cards[i];
                 cards.RemoveAt(i);
+                Object.Destroy(c.gameObject);
                 return;
             }
         }
+        isDone = true;
     }
 
     // Start is called before the first frame update
