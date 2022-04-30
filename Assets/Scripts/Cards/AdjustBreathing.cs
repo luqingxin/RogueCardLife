@@ -6,7 +6,6 @@ using UnityEngine;
  */
 public class AdjustBreathing : AbstractCard
 {
-
     public override void Effect()
     {
         
