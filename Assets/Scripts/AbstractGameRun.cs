@@ -21,6 +21,15 @@ public class AbstractGameRun : MonoBehaviour
     public GameObject EventCanvas;
     public Canvas cardCanvas;
 
+    public static AbstractGameRun gameRun;
+
+
+    private void Awake()
+    {
+
+        gameRun = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
