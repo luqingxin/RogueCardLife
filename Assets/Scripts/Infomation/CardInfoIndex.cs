@@ -35,7 +35,7 @@ public class CardInfoIndex : MonoBehaviour
         wk = new HSSFWorkbook(fs);
         sheet = wk.GetSheetAt(0);
 
-        for(int i = 0; i < maxRow; i++)
+        for(int i = 1; i <= maxRow; i++)
         {
             row = sheet.GetRow(i);
 
