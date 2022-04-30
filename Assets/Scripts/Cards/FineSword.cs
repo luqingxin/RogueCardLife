@@ -23,6 +23,7 @@ public class FineSword : AbstractCard
         this.isExhaust = true;
         this.cardDescription = "宝剑";
         gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
+        this.cardNum = 9;
     }
 
     // Update is called once per frame

@@ -20,6 +20,7 @@ public class GreatPill : AbstractCard
         this.isExhaust = true;
         this.cardDescription = "大还丹";
         gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
+        this.cardNum = 8;
     }
 
     // Update is called once per frame

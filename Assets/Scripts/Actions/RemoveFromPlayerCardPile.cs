@@ -18,7 +18,7 @@ public class RemoveFromPlayerCardPile : AbstractGameAction
         List<AbstractCard> cards = gameRun.playerCharacter.playerCardPile.cards;
         for (int i = 0; i < cards.Count; i++)
         {
-            if(cards[i].cardNum == cardToRemove.cardNum)
+            if(cards[i].NumInPlayerCardPile == cardToRemove.NumInPlayerCardPile)
             {
                 AbstractCard c = cards[i];
                 cards.RemoveAt(i);

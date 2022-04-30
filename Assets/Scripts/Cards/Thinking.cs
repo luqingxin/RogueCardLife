@@ -21,6 +21,7 @@ public class Thinking : AbstractCard
         this.cardColors.Add(CardColor.BLUE);
         this.cardDescription = "思考";
         gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
+        this.cardNum = 5;
     }
 
     // Update is called once per frame

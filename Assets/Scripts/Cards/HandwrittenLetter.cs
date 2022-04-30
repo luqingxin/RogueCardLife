@@ -22,6 +22,7 @@ public class HandwrittenLetter : AbstractCard
         this.isExhaust = true;
         this.cardDescription = "亲笔信";
         gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
+        this.cardNum = 11;
     }
 
     // Update is called once per frame

@@ -38,7 +38,7 @@ public class PlayerCharacter : AbstractCharacter
         AbstractCard c;
         c = cardCreater.CreateSingleCard(gameRun.cardIndex.getCardAt(x));
         playerCardPile.AddCard(c);
-        c.cardNum = ++totCardNum;
+        c.NumInPlayerCardPile = ++totCardNum;
     }
 
     // Update is called once per frame

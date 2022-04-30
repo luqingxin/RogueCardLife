@@ -22,6 +22,7 @@ public class Observe : AbstractCard
         this.cardColors.Add(CardColor.BLUE);
         this.cardDescription = "观察";
         gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
+        this.cardNum = 4;
     }
 
     // Update is called once per frame

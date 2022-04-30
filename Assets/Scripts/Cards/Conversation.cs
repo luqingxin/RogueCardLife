@@ -22,6 +22,7 @@ public class Conversation : AbstractCard
         this.cardColors.Add(CardColor.GREEN);
         this.cardDescription = "交谈";
         gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
+        this.cardNum = 6;
     }
 
     // Update is called once per frame

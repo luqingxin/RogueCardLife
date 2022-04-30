@@ -21,6 +21,7 @@ public class AdjustBreathing : AbstractCard
         this.cardDescription = "调息";
         this.cardPic = "file://" + Application.dataPath + "/Resources/card_red";
         gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
+        this.cardNum = 0;
     }
 
     // Update is called once per frame

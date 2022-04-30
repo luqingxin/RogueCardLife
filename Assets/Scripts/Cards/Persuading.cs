@@ -21,6 +21,7 @@ public class Persuading : AbstractCard
         this.cardColors.Add(CardColor.GREEN);
         this.cardDescription = "说服";
         gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
+        this.cardNum = 7;
     }
 
     // Update is called once per frame

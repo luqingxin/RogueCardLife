@@ -23,6 +23,7 @@ public class SilkBag : AbstractCard
         this.isExhaust = true;
         this.cardDescription = "锦囊";
         gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
+        this.cardNum = 10;
     }
 
     // Update is called once per frame

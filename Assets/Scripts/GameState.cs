@@ -16,6 +16,7 @@ public class GameState : MonoBehaviour
 
     public Dictionary<CardColor, int> pointOfColor;
 
+    //初始化一场战斗
     public void InitializeBattle()
     {
         if(cardPairs.Count == 0)
