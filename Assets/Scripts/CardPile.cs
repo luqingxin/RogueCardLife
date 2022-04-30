@@ -14,6 +14,16 @@ public class CardPile : MonoBehaviour
         return null;
     }
 
+    public void CleanPile()//清空牌堆，并删除牌堆中的牌
+    {
+        while(cards.Count > 0)
+        {
+            AbstractCard x = cards[0];
+            cards.RemoveAt(0);
+            Destroy(x.gameObject);
+        }
+    }
+
     public void ShuffleCards()//给牌堆洗牌
     {
         System.Random random = new System.Random();

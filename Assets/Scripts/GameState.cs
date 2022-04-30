@@ -16,6 +16,22 @@ public class GameState : MonoBehaviour
 
     public Dictionary<CardColor, int> pointOfColor;
 
+    //结束一场战斗
+    public void EndBattle()
+    {
+        drawPile.CleanPile();
+        drawPile.CleanPile();
+        for(int i = 0; i < cardPairs.Count; i++)
+        {
+            AbstractCard x = cardPairs[i].cardA;
+            cardPairs[i].cardA = null;
+            Destroy(x.gameObject);
+            x = cardPairs[i].cardB;
+            cardPairs[i].cardB = null;
+            Destroy(x.gameObject);
+        }
+    }
+
     //初始化一场战斗
     public void InitializeBattle()
     {
@@ -36,6 +52,10 @@ public class GameState : MonoBehaviour
         {
             addActionToButtom(new DrawCardAction(gameRun));
         }
+        pointOfColor[CardColor.RED] = 0;
+        pointOfColor[CardColor.YELLOW] = 0;
+        pointOfColor[CardColor.GREEN] = 0;
+        pointOfColor[CardColor.BLUE] = 0;
     }
 
     public void DisToDraw()//将牌从弃牌堆移动到抽牌堆
@@ -57,16 +77,6 @@ public class GameState : MonoBehaviour
         pointOfColor[cl] += x;
         //Debug.Log(cl);
         //Debug.Log(x);
-    }
-
-    public void EndRound()
-    {
-
-    }
-
-    public void RestartRound()
-    {
-        
     }
 
     public bool DiscardCard(AbstractCard x)//弃一张牌
@@ -188,6 +198,18 @@ public class GameState : MonoBehaviour
         return false;
     }
 
+    private bool IsCardInHand(AbstractCard x)
+    {
+        for(int i = 0; i < cardPairs.Count; i++)
+        {
+            if(cardPairs[i].cardA == x || cardPairs[i].cardB == x)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public bool SwapCard(AbstractCard x,AbstractCard y)//交换两张牌的位置，返回值true表示成功交换，false表示失败
     {
         //Debug.Log(x.cardDescription);
@@ -197,6 +219,10 @@ public class GameState : MonoBehaviour
             return false;
         }
         if (gameRun.playerCharacter.energy < swapCost)
+        {
+            return false;
+        }
+        if ((!IsCardInHand(x)) || (!IsCardInHand(y)))
         {
             return false;
         }
