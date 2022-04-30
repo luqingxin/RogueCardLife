@@ -13,11 +13,13 @@ public class AbstractGameRun : MonoBehaviour
     public PlayerCharacter playerCharacter;
     public CardIndex cardIndex;
     public CardAnimationController cardAnimationController;
-    public Canvas cardCanvas;
+
     public MapManager mapManager;
     public GameObject EventFrame;
     public RandEventManager randEventManager;
+
     public GameObject EventCanvas;
+    public Canvas cardCanvas;
 
     // Start is called before the first frame update
     void Start()
