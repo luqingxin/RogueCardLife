@@ -9,32 +9,32 @@ public class MeetRobber : AbstractRandEvent
     private void Start()
     {
         choiceNum = 5;
-        choices = new List<GameObject>();
+        choices = new List<EventChoice>();
     }
 
     public override void Check()
     {
-        if (CheckColor(gameRun.gameState.pointOfColor[CardColor.RED], 8)&& CheckColor(gameRun.gameState.pointOfColor[CardColor.YELLOW], 8))
-            choices[0].GetComponent<EventChoice>().selectable = true;
+        if (CheckColor(CardColor.RED, 8)&& CheckColor(CardColor.YELLOW, 8))
+            choices[0].selectable = true;
         else
-            choices[0].GetComponent<EventChoice>().selectable = false;
+            choices[0].selectable = false;
 
-        if (CheckColor(gameRun.gameState.pointOfColor[CardColor.BLUE], 15))
-            choices[1].GetComponent<EventChoice>().selectable = true;
+        if (CheckColor(CardColor.BLUE, 15))
+            choices[1].selectable = true;
         else
-            choices[1].GetComponent<EventChoice>().selectable = false;
+            choices[1].selectable = false;
 
-        if (CheckColor(gameRun.gameState.pointOfColor[CardColor.GREEN], 6) && CheckMoney(20))
-            choices[2].GetComponent<EventChoice>().selectable = true;
+        if (CheckColor(CardColor.GREEN, 6) && CheckMoney(20))
+            choices[2].selectable = true;
         else
-            choices[2].GetComponent<EventChoice>().selectable = false;
+            choices[2].selectable = false;
 
         if (CheckMoney(50))
-            choices[3].GetComponent<EventChoice>().selectable = true;
+            choices[3].selectable = true;
         else
-            choices[3].GetComponent<EventChoice>().selectable = false;
+            choices[3].selectable = false;
 
-        choices[4].GetComponent<EventChoice>().selectable = true;
+        choices[4].selectable = true;
     }
 
     public override void Effect(int x)

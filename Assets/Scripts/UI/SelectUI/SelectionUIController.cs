@@ -30,7 +30,7 @@ public class SelectionUIController : MonoBehaviour
         {
             choice = Instantiate(pre_Choice,transform);
             SetPosition(choice, i);
-            randEvent.choices.Add(choice);
+            randEvent.choices.Add(choice.GetComponent<EventChoice>());
             //文本索引
             //choice.transform.GetChild(0).GetComponent<Text>().text
             _load.LoadChoiceText(choice.transform.GetChild(0).GetComponent<Text>(), i);

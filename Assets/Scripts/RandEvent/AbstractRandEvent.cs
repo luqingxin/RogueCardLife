@@ -9,7 +9,7 @@ public class AbstractRandEvent : MonoBehaviour
     public AbstractGameRun gameRun;
     public string eventName;
     public int choiceNum;
-    public List<GameObject> choices;
+    public List<EventChoice> choices;
 
     public int HappenPossibility()
     {
@@ -34,9 +34,9 @@ public class AbstractRandEvent : MonoBehaviour
         gameRun.gameActionManager.addActionToBottom(action);
     }
 
-    public bool CheckColor(int colorNum , int colorNumInNeed)
+    public bool CheckColor(CardColor color , int colorNumInNeed)
     {
-        if (colorNum>=colorNumInNeed)
+        if (gameRun.gameState.pointOfColor[color]>=colorNumInNeed)
         {
             return true;
         }
@@ -53,6 +53,11 @@ public class AbstractRandEvent : MonoBehaviour
     public void ChangeMoney(int money)
     {
         gameRun.playerCharacter.money += money;
+    }
+
+    public void ChangeEndurance(int endurance)
+    {
+        gameRun.playerCharacter.endurance += endurance;
     }
 
     public void ChangePower(int type, int count)
