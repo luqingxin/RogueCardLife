@@ -7,18 +7,17 @@ public class Xiashan : AbstractRandEvent
     private void Start()
     {
         choiceNum = 1;
-        choices = new List<GameObject>();
+        choices = new List<EventChoice>();
     }
 
     public override void Check()
     {
-        choices[0].GetComponent<EventChoice>().selectable = true;
+        choices[0].selectable = true;
     }
 
     public override void Effect(int x)
     {
-        if (x == 0)
-            GetMove();
+       GetMove();
     }
 
     private void GetMove()
