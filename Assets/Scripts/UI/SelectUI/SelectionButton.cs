@@ -12,7 +12,7 @@ public class SelectionButton : MonoBehaviour
         if (GetComponent<EventChoice>().selectable)
         {
             controller.selected_Num = selection_num;
-            Debug.Log("您选择的是" + controller.selected_Num);
+            //Debug.Log("您选择的是" + controller.selected_Num);
             controller.isSelected = true;
         }
         else

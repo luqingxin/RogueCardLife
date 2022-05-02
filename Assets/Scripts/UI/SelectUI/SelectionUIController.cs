@@ -7,6 +7,7 @@ public class SelectionUIController : MonoBehaviour
 {
     public int selected_Num = 0;
     public bool isSelected = false;//是否已经选择事件选项
+    public static bool isLoading = false;//是否需要加载事件数据
 
     private int choice_Dis = -Screen.height/10;
     public AbstractRandEvent randEvent;
@@ -23,7 +24,7 @@ public class SelectionUIController : MonoBehaviour
         //从物体上获取随机事件
         randEvent = transform.GetComponent<AbstractRandEvent>();
 
-        EventLoad.loading_event = 2;
+        EventLoad.loading_event = randEvent.choiceNum;
         _load.LoadEvent();
 
         for (int i = 0; i < randEvent.choiceNum; i++)
@@ -40,6 +41,15 @@ public class SelectionUIController : MonoBehaviour
         }
     }
 
+    public void DeleteChoices()
+    {
+        randEvent = transform.GetComponent<AbstractRandEvent>();
+        for(int i = 0;i < randEvent.choiceNum; i++)
+        {
+            Destroy(randEvent.choices[i]);
+        }
+    }
+
     //设置选项的位置
     private void SetPosition(GameObject choice, int num)
     {
@@ -51,7 +61,6 @@ public class SelectionUIController : MonoBehaviour
     {
         _load = GetComponent<EventLoad>();
         IniRandEvent();
-
     }
 
     private void Update()
@@ -60,6 +69,12 @@ public class SelectionUIController : MonoBehaviour
         {
             randEvent.Effect(selected_Num);
             isSelected = false;
+            DeleteChoices();
+        }
+        if(isLoading)
+        {
+            IniRandEvent();
+            isLoading = false;
         }
     }
 }
