@@ -14,6 +14,7 @@ public class SelectionUIController : MonoBehaviour
     public GameObject pre_Choice;//预制体
     private GameObject choice;
     private EventLoad _load;
+    public static RandEventText randEventText;
 
     public GameObject choice_Pos;//记录选项UI的位置
 
@@ -24,13 +25,13 @@ public class SelectionUIController : MonoBehaviour
         //从物体上获取随机事件
         randEvent = transform.GetComponent<AbstractRandEvent>();
 
-        EventLoad.loading_event = randEvent.choiceNum;
         _load.LoadEvent();
 
-        for (int i = 0; i < randEvent.choiceNum; i++)
+        for (int i = 0; i < randEventText._choice_num; i++)
         {
             choice = Instantiate(pre_Choice,transform);
             SetPosition(choice, i);
+            Debug.Log(randEvent.choices);
             randEvent.choices.Add(choice.GetComponent<EventChoice>());
             //文本索引
             //choice.transform.GetChild(0).GetComponent<Text>().text
@@ -60,7 +61,7 @@ public class SelectionUIController : MonoBehaviour
     private void Start()
     {
         _load = GetComponent<EventLoad>();
-        IniRandEvent();
+        //IniRandEvent();
     }
 
     private void Update()

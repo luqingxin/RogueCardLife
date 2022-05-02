@@ -9,6 +9,7 @@ public class BeatTiger : AbstractRandEvent
     {
         choiceNum = 2;
         choices = new List<EventChoice>();
+        Debug.Log("xxxxxxxx");
     }
 
     public override void Check()

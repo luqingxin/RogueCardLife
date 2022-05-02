@@ -29,6 +29,7 @@ public class RandEventManager : MonoBehaviour
         if (x.IsSubclassOf(typeof(AbstractRandEvent))){
             gameRun.EventFrame.AddComponent(x);
             gameRun.EventFrame.GetComponent<AbstractRandEvent>().gameRun = gameRun;
+            SelectionUIController.isLoading = true;
         }
     }
 
@@ -36,6 +37,8 @@ public class RandEventManager : MonoBehaviour
     {
         System.Random random = new System.Random();
         int x = random.Next(0, randEventIndex.maxRow - 1);
+        EventLoad.loading_event = x;
+        SelectionUIController.randEventText = GetEventText(x);
         return GetEventText(x);
     }
     
