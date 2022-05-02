@@ -16,11 +16,16 @@ public class GameState : MonoBehaviour
 
     public Dictionary<CardColor, int> pointOfColor;
 
+    public void EndBattlButton()
+    {
+        addActionToButtom(new EndBattleAction(gameRun));
+    }
+
     //结束一场战斗
     public void EndBattle()
     {
         drawPile.CleanPile();
-        drawPile.CleanPile();
+        discardPile.CleanPile();
         for(int i = 0; i < cardPairs.Count; i++)
         {
             AbstractCard x = cardPairs[i].cardA;
@@ -30,17 +35,23 @@ public class GameState : MonoBehaviour
             cardPairs[i].cardB = null;
             Destroy(x.gameObject);
         }
+        while (cardPairs.Count > 0)
+        {
+            cardPairs.RemoveAt(0);
+        }
+        gameRun.gameActionManager.ActionClear();
     }
 
     //初始化一场战斗
     public void InitializeBattle()
     {
-        if(cardPairs.Count == 0)
+        if(cardPairs.Count != 0)
         {
-            for(int i = 0; i < 6; i++)
-            {
-                cardPairs.Add(new CardPair());
-            }
+            return;
+        }
+        for(int i = 0; i < 6; i++)
+        {
+            cardPairs.Add(new CardPair());
         }
         for(int i = 0; i < 6; i++)
         {
@@ -48,6 +59,7 @@ public class GameState : MonoBehaviour
             cardPairs[i].cardB = null;
         }
         addActionToTop(new PlayerPileToDraw(gameRun));
+        addActionToButtom(new ShuffleDrawPile(gameRun));
         for(int i = 0; i < 12; i++)
         {
             addActionToButtom(new DrawCardAction(gameRun));

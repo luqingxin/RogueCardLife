@@ -20,6 +20,11 @@ public class GameActionManager : MonoBehaviour
     
 
 
+    public void ActionClear()
+    {
+        actions.Clear();
+    }
+
     public void addActionToBottom(AbstractGameAction action)
     {
         actions.Add(action);
