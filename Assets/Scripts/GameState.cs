@@ -185,24 +185,24 @@ public class GameState : MonoBehaviour
         {
             p.cardA.Effect();//触发卡牌AB的效果
             p.cardB.Effect();
-            addActionToButtom(new AddColorPoint(p.cardA.cardColors[0], p.cardA.pointNums[0],gameRun));
-            addActionToButtom(new AddColorPoint(p.cardB.cardColors[0], p.cardB.pointNums[0],gameRun));
+            addActionToTop(new AddColorPoint(p.cardA.cardColors[0], p.cardA.pointNums[0],gameRun));
+            addActionToTop(new AddColorPoint(p.cardB.cardColors[0], p.cardB.pointNums[0],gameRun));
             //弃掉或消耗这两张
             if (p.cardA.isExhaust) 
             { 
-                addActionToButtom(new ExhaustCardAction(p.cardA, gameRun)); 
+                addActionToTop(new ExhaustCardAction(p.cardA, gameRun)); 
             }
             else
             {
-                addActionToButtom(new DiscardCardAction(p.cardA, gameRun));
+                addActionToTop(new DiscardCardAction(p.cardA, gameRun));
             }
             if (p.cardB.isExhaust)
             {
-                addActionToButtom(new ExhaustCardAction(p.cardB, gameRun));
+                addActionToTop(new ExhaustCardAction(p.cardB, gameRun));
             }
             else
             {
-                addActionToButtom(new DiscardCardAction(p.cardB, gameRun));
+                addActionToTop(new DiscardCardAction(p.cardB, gameRun));
             }
             addActionToButtom(new DrawCardAction(gameRun));
             addActionToButtom(new DrawCardAction(gameRun));//再抽两张
