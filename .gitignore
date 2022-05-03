@@ -55,6 +55,11 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+# Word&Excel
+*.xls
+*.doc
+
+
 # Crashlytics generated file
 crashlytics-build.properties
 
