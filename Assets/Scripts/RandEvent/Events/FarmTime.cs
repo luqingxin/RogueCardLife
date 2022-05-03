@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FarmTime : AbstractRandEvent
 {
-    private void Start()
+    private void Awake()
     {
         choiceNum = 3;
         choices = new List<EventChoice>();

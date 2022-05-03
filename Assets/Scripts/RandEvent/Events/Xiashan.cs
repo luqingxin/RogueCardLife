@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Xiashan : AbstractRandEvent
 {
-    private void Start()
+    private void Awake()
     {
         choiceNum = 1;
         choices = new List<EventChoice>();

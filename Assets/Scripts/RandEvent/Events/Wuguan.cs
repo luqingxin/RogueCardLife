@@ -5,7 +5,7 @@ using UnityEngine;
 public class Wuguan : AbstractRandEvent
 {
    
-    void Start()
+    void Awake()
     {
         choiceNum = 2;
         choices = new List<EventChoice>();

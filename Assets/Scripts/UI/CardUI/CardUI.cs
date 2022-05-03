@@ -69,7 +69,11 @@ public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,I
             if (eventData.pointerCurrentRaycast.gameObject.layer == 9)
             {
                 CardOperater.formalCardIndex = indexInList;
-                CardOperater.targetCardIndex = eventData.pointerCurrentRaycast.gameObject.GetComponent<CardUI>().indexInList;
+                CardUI cardUI = eventData.pointerCurrentRaycast.gameObject.GetComponent<CardUI>();
+                if(cardUI != null)
+                {
+                    CardOperater.targetCardIndex = cardUI.indexInList;
+                }
             }
         }
     }

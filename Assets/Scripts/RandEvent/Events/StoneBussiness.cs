@@ -5,7 +5,7 @@ using UnityEngine;
 public class StoneBussiness : AbstractRandEvent
 {
 
-    void Start()
+    void Awake()
     {
         choiceNum = 3;
         choices = new List<EventChoice>();

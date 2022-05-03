@@ -6,7 +6,7 @@ using UnityEngine;
 //遭遇强盗
 public class MeetRobber : AbstractRandEvent
 {
-    private void Start()
+    private void Awake()
     {
         choiceNum = 5;
         choices = new List<EventChoice>();
