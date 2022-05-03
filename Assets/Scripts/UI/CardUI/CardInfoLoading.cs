@@ -37,10 +37,8 @@ public class CardInfoLoading : MonoBehaviour
     { 
         card = GetComponent<AbstractCard>();
 
-        int x = card.cardNum;
-        
-        card_Name.text = CardInfoIndex.cardTexts[x].card_Name;
-        card_Description.text = CardInfoIndex.cardTexts[x].card_Description;
-        card_Point.text = CardInfoIndex.cardTexts[x].card_Point;
+        card_Name.text = card.cardName;
+        card_Description.text = card.cardDescription;
+        card_Point.text = card.pointNums[0].ToString();
     }
 }

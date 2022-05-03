@@ -5280,7 +5280,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1660207518}
   - component: {fileID: 1660207517}
-  - component: {fileID: 1660207519}
   m_Layer: 0
   m_Name: CardIndex
   m_TagString: Untagged
@@ -5300,6 +5299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc017d672933eb409b16141f8a27b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newCardText: {fileID: 0}
+  maxRow: 20
 --- !u!4 &1660207518
 Transform:
   m_ObjectHideFlags: 0
@@ -5314,20 +5315,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1660207519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660207516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1b2ec6fa127ba54eb5507e8fcc2ae00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newCardText: {fileID: 0}
-  maxRow: 20
 --- !u!1 &1665513440
 GameObject:
   m_ObjectHideFlags: 0

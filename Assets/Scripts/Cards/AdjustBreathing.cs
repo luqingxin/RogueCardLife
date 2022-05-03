@@ -16,12 +16,8 @@ public class AdjustBreathing : AbstractCard
     {
         this.pointNums = new List<int>();
         this.cardColors = new List<CardColor>();
-        this.pointNums.Add(1);
-        this.cardColors.Add(CardColor.RED);
-        this.cardDescription = "调息";
-        this.cardPic = "file://" + Application.dataPath + "/Resources/card_red";
-        gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
         this.cardNum = 0;
+        SetCardText();
     }
 
     // Update is called once per frame

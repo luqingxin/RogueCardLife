@@ -15,12 +15,9 @@ public class GreatPill : AbstractCard
     {
         this.pointNums = new List<int>();
         this.cardColors = new List<CardColor>();
-        this.pointNums.Add(5);
-        this.cardColors.Add(CardColor.RED);
         this.isExhaust = true;
-        this.cardDescription = "大还丹";
-        gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
         this.cardNum = 8;
+        SetCardText();
     }
 
     // Update is called once per frame

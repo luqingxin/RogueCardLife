@@ -18,11 +18,8 @@ public class StoragePower : AbstractCard
     {
         this.pointNums = new List<int>();
         this.cardColors = new List<CardColor>();
-        this.pointNums.Add(2);
-        this.cardColors.Add(CardColor.RED);
-        this.cardDescription = "蓄力";
-        gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
         this.cardNum = 1;
+        SetCardText();
     }
 
     // Update is called once per frame

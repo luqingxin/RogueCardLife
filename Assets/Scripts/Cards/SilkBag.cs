@@ -18,12 +18,9 @@ public class SilkBag : AbstractCard
     {
         this.pointNums = new List<int>();
         this.cardColors = new List<CardColor>();
-        this.pointNums.Add(5);
-        this.cardColors.Add(CardColor.BLUE);
         this.isExhaust = true;
-        this.cardDescription = "锦囊";
-        gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
         this.cardNum = 10;
+        SetCardText();
     }
 
     // Update is called once per frame

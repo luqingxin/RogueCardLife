@@ -28,7 +28,15 @@ public abstract class AbstractCard : MonoBehaviour
     public int NumInPlayerCardPile;//卡牌在玩家牌堆中的编号
     public bool isExhaust;//卡牌使用后是否消耗
     public string cardDescription;//卡牌的描述
-    public string cardPic;//卡牌图片的路径
+
+    protected void SetCardText()
+    {
+        this.cardDescription = gameRun.cardIndex.cardTexts[cardNum].card_Description;
+        this.cardName = gameRun.cardIndex.cardTexts[cardNum].card_Name;
+        this.pointNums.Add(gameRun.cardIndex.cardTexts[cardNum].card_Point);
+        this.cardColors.Add(gameRun.cardIndex.cardTexts[cardNum].cardColor);
+        gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
+    }
 
     public void AddActionToTop(AbstractGameAction action)
     {

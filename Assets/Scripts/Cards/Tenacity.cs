@@ -18,11 +18,8 @@ public class Tenacity : AbstractCard
     {
         this.pointNums = new List<int>();
         this.cardColors = new List<CardColor>();
-        this.pointNums.Add(0);
-        this.cardColors.Add(CardColor.WHITE);
-        this.cardDescription = "坚韧";
-        gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
         this.cardNum = 13;
+        SetCardText();
     }
 
     // Update is called once per frame

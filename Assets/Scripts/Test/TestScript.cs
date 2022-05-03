@@ -21,7 +21,6 @@ public class TestScript : MonoBehaviour
         testObject.AddComponent(t);
         Image image =  testObject.GetComponent<Image>();
         AbstractCard card = (AbstractCard)testObject.GetComponent(typeof(AbstractCard));
-        sprite = (Sprite)Resources.Load(card.cardPic);
         image.sprite = sprite;
     }
 

@@ -18,11 +18,8 @@ public class Conversation : AbstractCard
     {
         this.pointNums = new List<int>();
         this.cardColors = new List<CardColor>();
-        this.pointNums.Add(1);
-        this.cardColors.Add(CardColor.GREEN);
-        this.cardDescription = "交谈";
-        gameRun.cardCanvas.GetComponent<CardCreater>().fixCardColor(this);
         this.cardNum = 6;
+        SetCardText();
     }
 
     // Update is called once per frame
