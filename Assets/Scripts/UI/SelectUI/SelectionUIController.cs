@@ -15,6 +15,7 @@ public class SelectionUIController : MonoBehaviour
     private GameObject choice;
     private EventLoad _load;
     public static RandEventText randEventText;
+    public static bool isSelecting = false;
 
     public GameObject choice_Pos;//记录选项UI的位置
 
@@ -70,6 +71,7 @@ public class SelectionUIController : MonoBehaviour
         {
             randEvent.Effect(selected_Num);
             isSelected = false;
+            isSelecting = false;
             DeleteChoices();
         }
         if(isLoading)

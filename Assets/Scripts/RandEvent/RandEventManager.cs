@@ -25,7 +25,6 @@ public class RandEventManager : MonoBehaviour
     //将事件x放到事件框上
     public void CreateEvent(Type x)
     {
-        Debug.Log(x);
         if (x.IsSubclassOf(typeof(AbstractRandEvent))){
             gameRun.EventFrame.AddComponent(x);
             gameRun.EventFrame.GetComponent<AbstractRandEvent>().gameRun = gameRun;

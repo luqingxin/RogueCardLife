@@ -29,6 +29,9 @@ public class PlayerCharacter : AbstractCharacter
     void Start()
     {
         isInitialCardPileDone = false;
+        PlayerCharacterInitialize();
+        this.transform.position = gameRun.mapManager.getFloatPosition(new Vector3Int(mapX, mapY, 0));
+        transform.SetAsLastSibling();
         totCardNum = 0;
     }
 

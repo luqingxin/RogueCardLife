@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Maiyi : AbstractRandEvent
 {
-    private void Start()
+    private void Awake()
     {
         choiceNum = 4;
         choices = new List<EventChoice>();

@@ -3922,7 +3922,6 @@ GameObject:
   - component: {fileID: 1200827707}
   - component: {fileID: 1200827706}
   - component: {fileID: 1200827705}
-  - component: {fileID: 1200827704}
   - component: {fileID: 1200827703}
   - component: {fileID: 1200827702}
   m_Layer: 5
@@ -3964,22 +3963,6 @@ MonoBehaviour:
   pre_Choice: {fileID: 5537770708783366694, guid: 55964a44bcaccf74c85b3ba42dd3261d,
     type: 3}
   choice_Pos: {fileID: 1584599701}
---- !u!114 &1200827704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200827701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e250958227a19dd4f802423224e610de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameRun: {fileID: 0}
-  eventName: 
-  choiceNum: 0
-  choices: []
 --- !u!114 &1200827705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5664,6 +5647,7 @@ MonoBehaviour:
   swapCost: 1
   discardAndDrawCost: 2
   gameRun: {fileID: 1600507566}
+  isInBattle: 0
 --- !u!4 &1737718850
 Transform:
   m_ObjectHideFlags: 0

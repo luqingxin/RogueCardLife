@@ -13,6 +13,7 @@ public class GameState : MonoBehaviour
     public int swapCost;
     public int discardAndDrawCost;
     public AbstractGameRun gameRun;
+    public bool isInBattle;
 
     public Dictionary<CardColor, int> pointOfColor;
 
@@ -40,6 +41,8 @@ public class GameState : MonoBehaviour
             cardPairs.RemoveAt(0);
         }
         gameRun.gameActionManager.ActionClear();
+        isInBattle = false;
+        SelectionUIController.isSelecting = true;
     }
 
     //初始化一场战斗
@@ -68,6 +71,7 @@ public class GameState : MonoBehaviour
         pointOfColor[CardColor.YELLOW] = 0;
         pointOfColor[CardColor.GREEN] = 0;
         pointOfColor[CardColor.BLUE] = 0;
+        isInBattle = true;
     }
 
     public void DisToDraw()//将牌从弃牌堆移动到抽牌堆

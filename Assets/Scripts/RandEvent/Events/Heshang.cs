@@ -5,7 +5,7 @@ using UnityEngine;
 public class Heshang : AbstractRandEvent
 {
     
-    void Start()
+    void Awake()
     {
         choiceNum = 3;
         choices = new List<EventChoice>();

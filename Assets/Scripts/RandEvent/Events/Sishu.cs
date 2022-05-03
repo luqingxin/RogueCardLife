@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sishu : AbstractRandEvent
 {
     
-    void Start()
+    void Awake()
     {
         choiceNum = 2;
         choices = new List<EventChoice>();

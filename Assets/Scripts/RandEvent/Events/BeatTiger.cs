@@ -5,11 +5,10 @@ using UnityEngine;
 public class BeatTiger : AbstractRandEvent
 {
     
-    void Start()
+    void Awake()
     {
         choiceNum = 2;
         choices = new List<EventChoice>();
-        Debug.Log("xxxxxxxx");
     }
 
     public override void Check()
