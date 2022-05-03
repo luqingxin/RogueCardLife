@@ -42,6 +42,7 @@ public class GameState : MonoBehaviour
         }
         gameRun.gameActionManager.ActionClear();
         isInBattle = false;
+        gameRun.EventFrame.GetComponent<AbstractRandEvent>().Check();
         SelectionUIController.isSelecting = true;
     }
 

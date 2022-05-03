@@ -32,7 +32,6 @@ public class SelectionUIController : MonoBehaviour
         {
             choice = Instantiate(pre_Choice,transform);
             SetPosition(choice, i);
-            Debug.Log(randEvent.choices);
             randEvent.choices.Add(choice.GetComponent<EventChoice>());
             //文本索引
             //choice.transform.GetChild(0).GetComponent<Text>().text
@@ -69,6 +68,7 @@ public class SelectionUIController : MonoBehaviour
     {
         if(isSelected)
         {
+            Debug.Log(selected_Num);
             randEvent.Effect(selected_Num);
             isSelected = false;
             isSelecting = false;
