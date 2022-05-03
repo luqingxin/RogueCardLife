@@ -45,9 +45,9 @@ public class SelectionUIController : MonoBehaviour
     public void DeleteChoices()
     {
         randEvent = transform.GetComponent<AbstractRandEvent>();
-        for(int i = 0;i < randEvent.choiceNum; i++)
+        foreach (EventChoice temp in randEvent.choices)
         {
-            Destroy(randEvent.choices[i]);
+            Destroy(temp.gameObject);
         }
     }
 
@@ -73,6 +73,7 @@ public class SelectionUIController : MonoBehaviour
             isSelected = false;
             isSelecting = false;
             DeleteChoices();
+            _load.des.text = "";//清空文本
         }
         if(isLoading)
         {

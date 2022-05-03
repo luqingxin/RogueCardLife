@@ -24,9 +24,6 @@ public class EventLoad : MonoBehaviour
 
     public void LoadChoiceText(Text text,int i)
     {
-       // Debug.Log(loading_event);
-        //Debug.Log(i);
-        //Debug.Log(index.texts[loading_event]._choices.Count);
         text.text = index.texts[loading_event]._choices[i];
     }
 
