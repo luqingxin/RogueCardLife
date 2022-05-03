@@ -16,7 +16,7 @@ public class SelectionButton : MonoBehaviour
         {
             return;
         }
-        GetComponent<EventChoice>().selectable = true;
+        //GetComponent<EventChoice>().selectable = true;
         if (GetComponent<EventChoice>().selectable)
         {
             controller.selected_Num = selection_num;

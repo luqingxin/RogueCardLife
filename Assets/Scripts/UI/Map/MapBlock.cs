@@ -37,7 +37,6 @@ public class MapBlock : MonoBehaviour
         {
             return;
         }
-        Debug.Log("hhh");
         if(MyAbs(gameRun.playerCharacter.mapX - x) + MyAbs(gameRun.playerCharacter.mapY - y) != 1)
         {
             return;
