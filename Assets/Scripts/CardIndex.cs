@@ -66,7 +66,6 @@ public class CardIndex : MonoBehaviour
                     newCardText.cardColor = CardColor.WHITE;
                     break;
             }
-            Debug.Log(row.GetCell(6));
             newCardText.cardType = Type.GetType(row.GetCell(6).ToString());
 
             cardTexts.Add(newCardText);

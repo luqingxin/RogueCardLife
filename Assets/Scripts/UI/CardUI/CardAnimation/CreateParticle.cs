@@ -33,8 +33,6 @@ public class CreateParticle
         }
 
         pre = Resources.Load(path + name) as GameObject;
-        Debug.Log(path + name);
-        Debug.Log(pre);
         pre = GameObject.Instantiate(pre);
         pre.transform.position = Camera.main.ScreenToWorldPoint(pos);
     }

@@ -80,5 +80,6 @@ public class SelectionUIController : MonoBehaviour
             IniRandEvent();
             isLoading = false;
         }
+        randEvent = transform.GetComponent<AbstractRandEvent>();
     }
 }
