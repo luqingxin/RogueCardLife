@@ -18,6 +18,11 @@ public abstract class AbstractCharacter : MonoBehaviour
     public int mapY;
 
 
+    public void Update()
+    {
+
+    }
+
     public void moveToBlockAt(int x,int y)
     {
         //if()

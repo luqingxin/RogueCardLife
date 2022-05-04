@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateParticle : MonoBehaviour
+public class CreateParticle
 {
-    private string path = "/Prefabs/AnimationPrefabs/";
-    private string name = "";
+    private static string path = "Prefabs/AnimationPrefabs/";
+    private static string name = "";
 
-    private GameObject pre;
+    private static GameObject pre;
 
-    public void Create(CardColor color,Vector3 pos)
+    public static void Create(CardColor color,Vector3 pos)
     {
         switch (color)
         {
@@ -32,8 +32,10 @@ public class CreateParticle : MonoBehaviour
                 return;
         }
 
-        pre = (GameObject)Resources.Load(path + name);
-        pre = Instantiate(pre);
+        pre = Resources.Load(path + name) as GameObject;
+        Debug.Log(path + name);
+        Debug.Log(pre);
+        pre = GameObject.Instantiate(pre);
         pre.transform.position = Camera.main.ScreenToWorldPoint(pos);
     }
 }

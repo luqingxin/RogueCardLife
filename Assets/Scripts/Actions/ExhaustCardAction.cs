@@ -15,6 +15,7 @@ public class ExhaustCardAction : AbstractGameAction
 
     public override void Effect()
     {
+        CreateParticle.Create(card.cardColors[0], card.transform.position);
         gameRun.gameState.Exhaust(card);
         isDone = true;
     }
