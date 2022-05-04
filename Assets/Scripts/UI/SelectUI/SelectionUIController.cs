@@ -36,6 +36,7 @@ public class SelectionUIController : MonoBehaviour
             //文本索引
             //choice.transform.GetChild(0).GetComponent<Text>().text
             _load.LoadChoiceText(choice.transform.GetChild(0).GetComponent<Text>(), i);
+            _load.LoadResultText(choice.transform.GetChild(1).GetComponent<Text>(), i);
 
             choice.GetComponent<SelectionButton>().controller = this;
             choice.GetComponent<SelectionButton>().selection_num = i;

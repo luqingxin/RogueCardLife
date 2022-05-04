@@ -47,6 +47,7 @@ public class RandEventIndex : MonoBehaviour
             text._choices = new List<string>();
             text._choices_result = new List<string>();
             text._choices_result_text = new List<string>();
+            text._choices_condition = new List<string>();
             text._geos = new List<int>();
 
             row = sheet.GetRow(j);
@@ -59,9 +60,10 @@ public class RandEventIndex : MonoBehaviour
 
                 for(int k = 0; k < text._choice_num; k++)
                 {
-                    text._choices.Add(row.GetCell(7+4*k).ToString());
-                    text._choices_result.Add(row.GetCell(9+4*k).ToString());
-                    text._choices_result_text.Add(row.GetCell(10+4*k).ToString());
+                    text._choices.Add(row.GetCell(7 + 4 * k).ToString());
+                    text._choices_condition.Add(row.GetCell(8 + 4 * k).ToString());
+                    text._choices_result_text.Add(row.GetCell(9 + 4 * k).ToString());
+                    text._choices_result.Add(row.GetCell(10 + 4 * k).ToString());
                 }
                 texts.Add(text);
             }
