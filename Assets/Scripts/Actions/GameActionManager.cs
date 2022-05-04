@@ -22,7 +22,10 @@ public class GameActionManager : MonoBehaviour
 
     public void ActionClear()
     {
-        actions.Clear();
+        while (actions.Count != 0)
+        {
+            actions.RemoveAt(0);
+        }
     }
 
     public void addActionToBottom(AbstractGameAction action)

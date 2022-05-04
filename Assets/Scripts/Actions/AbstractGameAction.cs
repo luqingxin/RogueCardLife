@@ -24,7 +24,6 @@ public abstract class AbstractGameAction
     public bool isDone;//整个动作是否已经完成
     public bool isStart;//动作是否已经开始执行
 
-
     public AbstractGameAction()
     {
         duration = 0.5;

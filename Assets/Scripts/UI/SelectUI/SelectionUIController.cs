@@ -76,11 +76,10 @@ public class SelectionUIController : MonoBehaviour
             DeleteChoices();
             _load.des.text = "";//清空文本
         }
-        if(isLoading)
+        if(isLoading && transform.GetComponents<AbstractRandEvent>().Length == 1)
         {
             IniRandEvent();
             isLoading = false;
         }
-        randEvent = transform.GetComponent<AbstractRandEvent>();
     }
 }

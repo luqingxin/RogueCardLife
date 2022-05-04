@@ -27,8 +27,11 @@ public class RandEventManager : MonoBehaviour
     {
         if (x.IsSubclassOf(typeof(AbstractRandEvent))){
             gameRun.EventFrame.AddComponent(x);
-            gameRun.EventFrame.GetComponent<AbstractRandEvent>().gameRun = gameRun;
-            Debug.Log(gameRun.EventFrame.GetComponent<AbstractRandEvent>().gameRun);
+            AbstractRandEvent[] es = gameRun.EventFrame.GetComponents<AbstractRandEvent>();
+            foreach(AbstractRandEvent e in es)
+            {
+                e.gameRun = gameRun;
+            }
             SelectionUIController.isLoading = true;
         }
     }

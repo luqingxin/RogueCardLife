@@ -73,6 +73,7 @@ public class GameState : MonoBehaviour
         pointOfColor[CardColor.GREEN] = 0;
         pointOfColor[CardColor.BLUE] = 0;
         isInBattle = true;
+        Debug.Log(gameRun.EventFrame.GetComponent<AbstractRandEvent>().gameRun);
     }
 
     public void DisToDraw()//将牌从弃牌堆移动到抽牌堆
