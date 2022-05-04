@@ -16,4 +16,5 @@ public class RandEventText : ScriptableObject
     public List<string> _choices;
     public List<string> _choices_result;//结果的奖励缩略显示
     public List<string> _choices_result_text;//结果的文本内容
+    public List<string> _choices_condition;//选项条件
 }
