@@ -23,6 +23,8 @@ public class PlayerCharacter : AbstractCharacter
         communication = 1;
         mapX = 0;
         mapY = 0;
+
+        money = 100;
     }
 
     // Start is called before the first frame update
