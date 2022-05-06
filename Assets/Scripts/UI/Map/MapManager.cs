@@ -14,7 +14,7 @@ public class MapManager : MonoBehaviour
     public static int targetX;
     public static int targetY;//目标坐标
     private List<MapBlock> blocks = new List<MapBlock>();
-    public MapCreater creater = new MapCreater();
+    public MapCreater creater;
     public AbstractGameRun gameRun;
 
     private int[,] setBlocks;

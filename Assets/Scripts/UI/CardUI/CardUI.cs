@@ -24,7 +24,7 @@ public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,I
     }
 
     private void Update()
-    {            
+    {
     }
 
     //转换坐标
@@ -55,6 +55,10 @@ public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (this.gameObject.GetComponent<AbstractCard>().isInHand() == false)
+        {
+            return;
+        }
         formalPos = transform.position;
         transform.position = eventData.position;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
@@ -63,6 +67,10 @@ public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,I
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (this.gameObject.GetComponent<AbstractCard>().isInHand() == false)
+        {
+            return;
+        }
         transform.position = eventData.position;
         if (eventData.pointerCurrentRaycast.gameObject != null)
         {
@@ -80,6 +88,10 @@ public class CardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,I
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (this.gameObject.GetComponent<AbstractCard>().isInHand() == false)
+        {
+            return;
+        }
         if (eventData.pointerCurrentRaycast.gameObject != null)
         {
             if (eventData.pointerCurrentRaycast.gameObject.layer == 9)

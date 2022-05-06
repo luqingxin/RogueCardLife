@@ -32,7 +32,7 @@ public class CardOperater : MonoBehaviour
 
         showcase_frame = showcase.transform.GetChild(1).gameObject;
         showcase_pic = showcase.transform.GetChild(0).gameObject;
-        index = new CardIndex();
+        index = AbstractGameRun.gameRun.cardIndex;
 
         isShowcased = false;
         isSelected = false;

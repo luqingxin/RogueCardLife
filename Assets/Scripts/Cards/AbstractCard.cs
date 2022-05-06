@@ -29,6 +29,10 @@ public abstract class AbstractCard : MonoBehaviour
     public bool isExhaust;//卡牌使用后是否消耗
     public string cardDescription;//卡牌的描述
 
+    public bool isInHand()
+    {
+        return gameRun.gameState.IsCardInHand(this);
+;    }
     protected void SetCardText()
     {
         this.cardDescription = gameRun.cardIndex.cardTexts[cardNum].card_Description;

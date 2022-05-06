@@ -73,7 +73,6 @@ public class GameState : MonoBehaviour
         pointOfColor[CardColor.GREEN] = 0;
         pointOfColor[CardColor.BLUE] = 0;
         isInBattle = true;
-        Debug.Log(gameRun.EventFrame.GetComponent<AbstractRandEvent>().gameRun);
     }
 
     public void DisToDraw()//将牌从弃牌堆移动到抽牌堆
@@ -132,7 +131,7 @@ public class GameState : MonoBehaviour
             {
                 //补一张新牌
                 addActionToTop(new DrawCardAction(gameRun));
-                Type t = gameRun.cardIndex.getCardAt(13);//无为
+                Type t = gameRun.cardIndex.getCardAt(14);//无为
                 addActionToTop(new AddNewCard(gameRun,t));
             }
             //addActionToTop(new )
@@ -216,7 +215,7 @@ public class GameState : MonoBehaviour
         return false;
     }
 
-    private bool IsCardInHand(AbstractCard x)
+    public bool IsCardInHand(AbstractCard x)
     {
         for(int i = 0; i < cardPairs.Count; i++)
         {

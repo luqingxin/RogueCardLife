@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 [System.Serializable]
-public class RandEventText : ScriptableObject
+public class RandEventText
 {
     public int _index;//编号
     public string _name;

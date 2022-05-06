@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class CardText : ScriptableObject
+
+[System.Serializable]
+public class CardText
 {
     public int card_Point;
     public string card_Name;
