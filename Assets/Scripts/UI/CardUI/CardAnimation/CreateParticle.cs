@@ -31,8 +31,9 @@ public class CreateParticle
             default:
                 return;
         }
-
+        Debug.Log(path + name);
         pre = Resources.Load(path + name) as GameObject;
+        Debug.Log(pre);
         pre = GameObject.Instantiate(pre);
         pre.transform.position = Camera.main.ScreenToWorldPoint(pos);
     }
