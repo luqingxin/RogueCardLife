@@ -68,21 +68,39 @@ public class MapManager : MonoBehaviour
         return null;
     }
 
+    [System.Obsolete]
     void Start()
     {
-        setBlocks = new int[,]
-        {
-            {0,0,0,0,1,1},
-            {0,0,2,0,0,1},
-            {2,0,1,1,0,1},
-        };
+        SetNewMap();
         creater.gameRun = gameRun;
         gameRun.playerCharacter.transform.SetParent(transform);
         creater.SetBlock(setBlocks,blocks);
     }
 
-    private void Update()
+    [System.Obsolete]
+    public void SetNewMap()
     {
-        
+        List<int[,]> maps = new List<int[,]>();
+        maps[1] = new int[,]
+        {
+            {0,0,0,0,0,0 },
+            {0,0,0,2,0,1 },
+            {1,0,0,0,1,1 }
+        };
+        maps[2] = new int[,]
+        {
+            {0,1,1,1,1,0 },
+            {0,0,1,1,1,2 },
+            {0,0,0,0,0,3 }
+        };
+        maps[3] = new int[,]
+        {
+            {0,0,0,3,2,0},
+            {1,0,0,0,0,1 },
+            {1,0,0,3,0,0 }
+        };
+        int i = 0;
+        i = Random.RandomRange(1, 3);
+        setBlocks = maps[i];
     }
 }

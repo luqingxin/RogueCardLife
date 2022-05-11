@@ -31,7 +31,7 @@ public class MapCreater : MonoBehaviour
         block_prefab_list.Add(block_road);
         block_prefab_list.Add(block_inn);
         block_prefab_list.Add(block_forest);
-        //block_prefab_list.Add(block_mountain);
+        block_prefab_list.Add(block_mountain);
         //block_prefab_list.Add(block_village);  
         //block_prefab_list.Add(block_fastness);
         //block_prefab_list.Add(block_camp);
