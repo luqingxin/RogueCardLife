@@ -9,7 +9,7 @@ public class PlayerCharacter : AbstractCharacter
 
     public CardPile playerCardPile;
     public int energy;//精力
-    public int endurance;//耐力值
+    public int food;//食物值
     private bool isInitialCardPileDone;
     private int totCardNum;
 

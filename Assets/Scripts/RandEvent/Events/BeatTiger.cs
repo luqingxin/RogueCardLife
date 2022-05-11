@@ -36,12 +36,12 @@ public class BeatTiger : AbstractRandEvent
     private void Accept()
     {
         ChangeMoney(500);
-        ChangeEndurance(1);
+        ChangeFood(1);
         
     }
 
     private void Refuse()
     {
-        ChangeEndurance(2);
+        ChangeFood(2);
     }
 }

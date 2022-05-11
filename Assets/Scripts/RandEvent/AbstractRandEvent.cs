@@ -55,9 +55,9 @@ public class AbstractRandEvent : MonoBehaviour
         gameRun.playerCharacter.money += money;
     }
 
-    public void ChangeEndurance(int endurance)
+    public void ChangeFood(int food)
     {
-        gameRun.playerCharacter.endurance += endurance;
+        gameRun.playerCharacter.food += food;
     }
 
     public void ChangePower(int type, int count)

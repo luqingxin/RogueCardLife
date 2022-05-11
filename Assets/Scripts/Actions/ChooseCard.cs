@@ -26,7 +26,7 @@ public class ChooseCard : AbstractGameAction
         //生成三张牌到界面上
         if (isIniDone == false)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++)
             {
                 card[i] = cardCreater.CreateSingleCard(cardText[i].cardType);
                 card[i].transform.position = CardRewardPosition.positions[i];
@@ -38,7 +38,7 @@ public class ChooseCard : AbstractGameAction
         //判断是否有牌被点击
         if (isChooseDone == false)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++)
             {
                 ChoosingCard x = card[i].GetComponent<ChoosingCard>();
                 if (x != null)
@@ -49,7 +49,7 @@ public class ChooseCard : AbstractGameAction
                         choosedCard = card[i];
                         GameObject.Destroy(card[i].GetComponent<ChoosingCard>());
                         card[i].gameObject.GetComponent<CardUI>().enabled = true;
-                        for (int j = 0; j < 2; j++)
+                        for (int j = 0; j < 3; j++)
                         {
                             if (i != j)
                             {
