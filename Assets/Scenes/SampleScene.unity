@@ -2408,7 +2408,8 @@ MonoBehaviour:
     type: 3}
   block_forest: {fileID: 4833294644627398370, guid: bca630dce62871d4eadca6670d80c2ed,
     type: 3}
-  block_mountain: {fileID: 0}
+  block_mountain: {fileID: 7991819618017996418, guid: 16058f26baa96c34ba287cd9708d2106,
+    type: 3}
   block_village: {fileID: 0}
   block_fastness: {fileID: 0}
   block_camp: {fileID: 0}
@@ -6174,7 +6175,8 @@ MonoBehaviour:
   mapY: 0
   playerCardPile: {fileID: 706210545}
   energy: 10
-  endurance: 0
+  food: 0
+  maxEnegy: 0
 --- !u!224 &1701700785
 RectTransform:
   m_ObjectHideFlags: 0
