@@ -12,6 +12,7 @@ public class PlayerCharacter : AbstractCharacter
     public int food;//食物值
     private bool isInitialCardPileDone;
     private int totCardNum;
+    public int maxEnegy;
 
     //初始化玩家人物
     public void PlayerCharacterInitialize()
@@ -25,6 +26,9 @@ public class PlayerCharacter : AbstractCharacter
         mapY = 0;
 
         money = 100;
+        maxEnegy = 3;
+        energy = 3;
+        food = 10;
     }
 
     // Start is called before the first frame update

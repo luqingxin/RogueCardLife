@@ -25,6 +25,21 @@ public class FlowUI : MonoBehaviour
 
     private void Update()
     {
+        if (AbstractGameRun.gameRun.gameState.isInBattle)
+        {
+            flowNum = 1;
+        }
+        else
+        {
+            if (SelectionUIController.isSelecting)
+            {
+                flowNum = 2;
+            }
+            else
+            {
+                flowNum = 0;
+            }
+        }
         if(flowNum!=previousFlowNum)
         {
             ActiveFlow(flowNum);
