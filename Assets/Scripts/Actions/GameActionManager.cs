@@ -28,12 +28,12 @@ public class GameActionManager : MonoBehaviour
         }
     }
 
-    public void addActionToBottom(AbstractGameAction action)
+    public void AddActionToBottom(AbstractGameAction action)
     {
         actions.Add(action);
     }
 
-    public void addActionToTop(AbstractGameAction action)
+    public void AddActionToTop(AbstractGameAction action)
     {
         actions.Insert(0,action);
     }

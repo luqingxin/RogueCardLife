@@ -44,11 +44,11 @@ public abstract class AbstractCard : MonoBehaviour
 
     public void AddActionToTop(AbstractGameAction action)
     {
-        gameRun.gameActionManager.addActionToTop(action);
+        gameRun.gameActionManager.AddActionToTop(action);
     }
     public void AddActionToButtom(AbstractGameAction action)
     {
-        gameRun.gameActionManager.addActionToBottom(action);
+        gameRun.gameActionManager.AddActionToBottom(action);
     }
     public static bool CardCombine(AbstractCard CardA,AbstractCard CardB)//判断卡牌能否组合
     {

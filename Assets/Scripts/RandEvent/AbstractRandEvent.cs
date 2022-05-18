@@ -25,13 +25,13 @@ public class AbstractRandEvent : MonoBehaviour
 
     }
 
-    public void addActionToTop(AbstractGameAction action)
+    public void AddActionToTop(AbstractGameAction action)
     {
-        gameRun.gameActionManager.addActionToTop(action);
+        gameRun.gameActionManager.AddActionToTop(action);
     }
-    public void addActionToButtom(AbstractGameAction action)
+    public void AddActionToButtom(AbstractGameAction action)
     {
-        gameRun.gameActionManager.addActionToBottom(action);
+        gameRun.gameActionManager.AddActionToBottom(action);
     }
 
     public bool CheckColor(CardColor color , int colorNumInNeed)

@@ -19,7 +19,7 @@ public class GameState : MonoBehaviour
 
     public void EndBattlButton()
     {
-        addActionToButtom(new EndBattleAction(gameRun));
+        AddActionToButtom(new EndBattleAction(gameRun));
     }
 
     //结束一场战斗
@@ -62,11 +62,11 @@ public class GameState : MonoBehaviour
             cardPairs[i].cardA = null;
             cardPairs[i].cardB = null;
         }
-        addActionToTop(new PlayerPileToDraw(gameRun));
-        addActionToButtom(new ShuffleDrawPile(gameRun));
+        AddActionToTop(new PlayerPileToDraw(gameRun));
+        AddActionToButtom(new ShuffleDrawPile(gameRun));
         for(int i = 0; i < 12; i++)
         {
-            addActionToButtom(new DrawCardAction(gameRun));
+            AddActionToButtom(new DrawCardAction(gameRun));
         }
         pointOfColor[CardColor.RED] = 0;
         pointOfColor[CardColor.YELLOW] = 0;
@@ -123,16 +123,16 @@ public class GameState : MonoBehaviour
         {
             if(discardPile.cards.Count != 0)//如果有弃牌就把弃牌堆挪过去
             {
-                addActionToTop(new DrawCardAction(gameRun));
-                addActionToTop(new ShuffleDrawPile(gameRun));
-                addActionToTop(new DiscardPileToDrawPile(gameRun));
+                AddActionToTop(new DrawCardAction(gameRun));
+                AddActionToTop(new ShuffleDrawPile(gameRun));
+                AddActionToTop(new DiscardPileToDrawPile(gameRun));
             }
             else//没有弃牌就添加一张新牌
             {
                 //补一张新牌
-                addActionToTop(new DrawCardAction(gameRun));
+                AddActionToTop(new DrawCardAction(gameRun));
                 Type t = gameRun.cardIndex.getCardAt(14);//无为
-                addActionToTop(new AddNewCard(gameRun,t));
+                AddActionToTop(new AddNewCard(gameRun,t));
             }
             //addActionToTop(new )
             return -1;
@@ -185,27 +185,27 @@ public class GameState : MonoBehaviour
         {
             p.cardA.Effect();//触发卡牌AB的效果
             p.cardB.Effect();
-            addActionToTop(new AddColorPoint(p.cardA.cardColors[0], p.cardA.pointNums[0],gameRun));
-            addActionToTop(new AddColorPoint(p.cardB.cardColors[0], p.cardB.pointNums[0],gameRun));
+            AddActionToTop(new AddColorPoint(p.cardA.cardColors[0], p.cardA.pointNums[0],gameRun));
+            AddActionToTop(new AddColorPoint(p.cardB.cardColors[0], p.cardB.pointNums[0],gameRun));
             //弃掉或消耗这两张
             if (p.cardA.isExhaust) 
             { 
-                addActionToTop(new ExhaustCardAction(p.cardA, gameRun)); 
+                AddActionToTop(new ExhaustCardAction(p.cardA, gameRun)); 
             }
             else
             {
-                addActionToTop(new DiscardCardAction(p.cardA, gameRun));
+                AddActionToTop(new DiscardCardAction(p.cardA, gameRun));
             }
             if (p.cardB.isExhaust)
             {
-                addActionToTop(new ExhaustCardAction(p.cardB, gameRun));
+                AddActionToTop(new ExhaustCardAction(p.cardB, gameRun));
             }
             else
             {
-                addActionToTop(new DiscardCardAction(p.cardB, gameRun));
+                AddActionToTop(new DiscardCardAction(p.cardB, gameRun));
             }
-            addActionToButtom(new DrawCardAction(gameRun));
-            addActionToButtom(new DrawCardAction(gameRun));//再抽两张
+            AddActionToButtom(new DrawCardAction(gameRun));
+            AddActionToButtom(new DrawCardAction(gameRun));//再抽两张
             /*DiscardCard(p.cardA);//弃掉这两张
             DiscardCard(p.cardB);
             DrawCard();//再抽两张m  
@@ -293,17 +293,17 @@ public class GameState : MonoBehaviour
         return true;
     }
 
-    public void addActionToTop(AbstractGameAction action)
+    public void AddActionToTop(AbstractGameAction action)
     {
-        gameRun.gameActionManager.addActionToTop(action);
+        gameRun.gameActionManager.AddActionToTop(action);
     }
-    public void addActionToButtom(AbstractGameAction action)
+    public void AddActionToButtom(AbstractGameAction action)
     {
-        gameRun.gameActionManager.addActionToBottom(action);
+        gameRun.gameActionManager.AddActionToBottom(action);
     }
 
     //返回第x张牌
-    public AbstractCard getCardOfInt(int x)
+    public AbstractCard GetCardOfInt(int x)
     {
         if(x%2 == 0)
         {

@@ -25,7 +25,7 @@ public class DrawCardAction : AbstractGameAction
         if(cardNum != -1)
         {
             AbstractCard card;
-            card = gameRun.gameState.getCardOfInt(cardNum);
+            card = gameRun.gameState.GetCardOfInt(cardNum);
             bool a;
             a = gameRun.cardAnimationController.DrawCard(card.gameObject, CardPositions.positions[cardNum]);
             if (a == true)
