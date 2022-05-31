@@ -27,9 +27,10 @@ public class EventLoad : MonoBehaviour
         text.text = index.texts[loading_event]._choices[i];
     }
 
-    public void LoadResultText(Text text,int i)
+    public void LoadNeedText(Text text,int i)
     {
         text.text = index.texts[loading_event]._choices_condition[i];
+
     }
 
     public void LoadResult(int i)

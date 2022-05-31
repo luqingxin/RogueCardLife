@@ -10,6 +10,7 @@ public class CardInfoLoading : MonoBehaviour
     private Text card_Name;
     private Text card_Description;
     private Text card_Point;
+    private Sprite card_img;
 
     private AbstractCard card;
 
@@ -21,6 +22,7 @@ public class CardInfoLoading : MonoBehaviour
         card_Name = transform.GetChild(2).GetComponent<Text>();
         card_Description = transform.GetChild(3).GetComponent<Text>();
         card_Point = transform.GetChild(4).GetComponent<Text>();
+        //
     }
 
     private void LateUpdate()
